@@ -1,0 +1,32 @@
+# prefix key
+set -g prefix C-a
+unbind C-b
+bind C-a send-prefix
+
+# mouse
+set -g mouse on
+
+# index
+set -g base-index 1
+setw -g pane-base-index 1
+
+# vim
+## pane motion
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+## window motion
+bind -r C-h select-window -t :-
+bind -r C-l select-window -t :+
+
+## pane resize
+bind -r H resize-pane -L 3
+bind -r J resize-pane -D 3
+bind -r K resize-pane -U 3
+bind -r L resize-pane -R 3
+
+## rebind overwritten
+bind a last-window
+bind S switch-client -l
