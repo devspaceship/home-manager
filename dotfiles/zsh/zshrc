@@ -61,6 +61,12 @@ alias npx='pnpx'
 ## Git
 alias lg='lazygit'
 
+## Terraform
+alias tf='terraform'
+alias tfi='terraform init'
+alias tfp='terraform plan'
+alias tfa='terraform apply'
+
 # User Config
 export EDITOR="nvim"
 export LANG=en_US.UTF-8
