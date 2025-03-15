@@ -1,10 +1,10 @@
 
 [window]
 decorations = "Full"
-# opacity = 0.80
-# blur = true
-# startup_mode = "SimpleFullscreen"
-startup_mode = "Fullscreen"
+opacity = 0.90
+blur = true
+startup_mode = "SimpleFullscreen"
+# startup_mode = "Fullscreen"
 dynamic_title = false
 resize_increments = true
 
@@ -25,12 +25,9 @@ blink_timeout = 0
 
 [keyboard]
 bindings = [
-    { key = "F", mods = "Command|Shift", action = "ToggleSimpleFullscreen" },
-    { key = "V", mods = "Command|Shift", action = "ToggleViMode" }
+  { key = "F", mods = "Command|Shift", action = "ToggleSimpleFullscreen" },
+  { key = "V", mods = "Command|Shift", action = "ToggleViMode" },
 ]
 
 [general]
-import = [
-    "~/.config/alacritty/themes/themes/smoooooth.toml"
-]
-
+import = ["~/.config/alacritty/themes/themes/smoooooth.toml"]
