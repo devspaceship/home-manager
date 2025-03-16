@@ -12,6 +12,7 @@ in
   home.stateVersion = "24.11";
 
   home.packages = [
+    pkgs.bat
     pkgs.cmatrix
     pkgs.fd
     pkgs.fzf

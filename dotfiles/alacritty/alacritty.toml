@@ -1,3 +1,5 @@
+[general]
+import = ["~/.config/alacritty/themes/themes/catppuccin.toml"]
 
 [window]
 decorations = "Full"
@@ -28,6 +30,3 @@ bindings = [
   { key = "F", mods = "Command|Shift", action = "ToggleSimpleFullscreen" },
   { key = "V", mods = "Command|Shift", action = "ToggleViMode" },
 ]
-
-[general]
-import = ["~/.config/alacritty/themes/themes/smoooooth.toml"]
