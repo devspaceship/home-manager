@@ -3,6 +3,7 @@ return {
   ---@class PluginLspOpts
   opts = {
     servers = {
+      autotools_ls = {},
       pyright = {},
     },
   },
