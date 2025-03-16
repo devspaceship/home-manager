@@ -2,16 +2,15 @@
 import = ["~/.config/alacritty/themes/themes/catppuccin.toml"]
 
 [window]
+padding = { x = 0, y = 35 }
 decorations = "Full"
-opacity = 0.85
-blur = true
-# startup_mode = "SimpleFullscreen"
-startup_mode = "Fullscreen"
+opacity = 0.9
+# blur = true
+startup_mode = "SimpleFullscreen"
+# startup_mode = "Fullscreen"
 dynamic_title = false
 resize_increments = true
-
-[scrolling]
-history = 5000
+option_as_alt = "Both"
 
 [font]
 normal = { family = "FiraCode Nerd Font Mono", style = "Retina" }
