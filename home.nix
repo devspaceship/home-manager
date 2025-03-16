@@ -13,10 +13,15 @@ in
 
   home.packages = [
     pkgs.cmatrix
+    pkgs.fd
     pkgs.fzf
+    pkgs.gh
+    pkgs.go
+    pkgs.gopls
     pkgs.htop
     pkgs.lazygit
     pkgs.neovim
+    pkgs.nmap
     pkgs.ripgrep
     pkgs.tree
     # (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })

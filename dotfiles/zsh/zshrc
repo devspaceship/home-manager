@@ -18,9 +18,13 @@ plugins=(
     gh
     git
     gitfast
+    golang
     rust
+    ssh
     sudo
+    terraform
     timer
+    tmux
 )
 
 source $ZSH/oh-my-zsh.sh

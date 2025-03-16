@@ -1,7 +1,7 @@
 
 [window]
 decorations = "Full"
-opacity = 0.90
+opacity = 0.85
 blur = true
 startup_mode = "SimpleFullscreen"
 # startup_mode = "Fullscreen"
