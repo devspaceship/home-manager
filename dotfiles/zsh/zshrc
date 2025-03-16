@@ -70,6 +70,11 @@ alias tfi='terraform init'
 alias tfp='terraform plan'
 alias tfa='terraform apply'
 
+## Tmux
+alias tm='tmux'
+alias t='tmux'
+alias ta='tmux attach'
+
 # User Config
 export EDITOR="nvim"
 export LANG=en_US.UTF-8
