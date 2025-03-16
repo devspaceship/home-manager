@@ -24,7 +24,6 @@ plugins=(
     sudo
     terraform
     timer
-    tmux
 )
 
 source $ZSH/oh-my-zsh.sh

@@ -22,6 +22,7 @@ in
     pkgs.lazygit
     pkgs.neovim
     pkgs.nmap
+    pkgs.python313
     pkgs.ripgrep
     pkgs.tree
     # (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })

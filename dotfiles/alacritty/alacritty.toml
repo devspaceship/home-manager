@@ -3,8 +3,8 @@
 decorations = "Full"
 opacity = 0.85
 blur = true
-startup_mode = "SimpleFullscreen"
-# startup_mode = "Fullscreen"
+# startup_mode = "SimpleFullscreen"
+startup_mode = "Fullscreen"
 dynamic_title = false
 resize_increments = true
 
