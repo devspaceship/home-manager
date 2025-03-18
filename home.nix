@@ -31,6 +31,7 @@ in
   ];
 
   home.file = {
+    ".gitconfig" = configSymlink "git/conf";
     ".zshrc" = configSymlink "zsh/zshrc";
     ".config/alacritty" = configSymlink "alacritty";
     ".config/htop/htoprc" = configSymlink "htop/htoprc";
