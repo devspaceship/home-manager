@@ -17,6 +17,7 @@ in
     pkgs.fd
     pkgs.fzf
     pkgs.gh
+    pkgs.git
     pkgs.go
     pkgs.gopls
     pkgs.htop
