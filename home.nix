@@ -22,6 +22,7 @@ in
     pkgs.gopls
     pkgs.htop
     pkgs.lazygit
+    pkgs.neofetch
     pkgs.neovim
     pkgs.nmap
     pkgs.python313
