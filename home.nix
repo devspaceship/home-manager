@@ -21,6 +21,7 @@ in
     pkgs.go
     pkgs.gopls
     pkgs.htop
+    pkgs.kitty
     pkgs.lazygit
     pkgs.neofetch
     pkgs.neovim
@@ -28,6 +29,7 @@ in
     pkgs.python313
     pkgs.ripgrep
     pkgs.tree
+    pkgs.yazi
     # (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
   ];
 
