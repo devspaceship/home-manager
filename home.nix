@@ -36,6 +36,7 @@ in
   home.file = {
     ".gitconfig" = configSymlink "git/conf";
     ".zshrc" = configSymlink "zsh/zshrc";
+    ".config/aerospace/aerospace.toml" = configSymlink "aerospace/aerospace.toml";
     ".config/alacritty" = configSymlink "alacritty";
     ".config/htop/htoprc" = configSymlink "htop/htoprc";
     ".config/nix" = configSymlink "nix";
@@ -46,7 +47,6 @@ in
     ".config/starship.toml" = configSymlink "starship/starship.toml";
     ".config/tmux/tmux.conf" = configSymlink "tmux/tmux.conf";
     ".config/tmux/tmux.conf.local" = configSymlink "tmux/tmux.conf.local";
-    ".config/yabai/yabairc" = configSymlink "yabai/yabairc";
   };
 
   home.sessionVariables = {
