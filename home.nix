@@ -44,7 +44,7 @@ in
     ".config/nvim" = configSymlink "nvim";
     ".config/nvim-bak" = configSymlink "nvim-bak";
     ".config/rio" = configSymlink "rio";
-    ".config/sketchybar/sketchybarrc" = configSymlink "sketchybar/sketchybarrc";
+    ".config/sketchybar" = configSymlink "sketchybar";
     ".config/starship.toml" = configSymlink "starship/starship.toml";
     ".config/tmux/tmux.conf" = configSymlink "tmux/tmux.conf";
     ".config/tmux/tmux.conf.local" = configSymlink "tmux/tmux.conf.local";
