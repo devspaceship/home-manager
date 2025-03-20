@@ -1,6 +1,6 @@
 # Commands (https://nikitabobko.github.io/AeroSpace/commands)
 after-login-command = []
-after-startup-command = []
+after-startup-command = ['exec-and-forget sketchybar']
 exec-on-workspace-change = [
   '/bin/bash',
   '-c',
