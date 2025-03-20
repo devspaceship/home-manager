@@ -43,6 +43,7 @@ in
     ".config/nix-darwin" = configSymlink "nix-darwin";
     ".config/nvim" = configSymlink "nvim";
     ".config/nvim-bak" = configSymlink "nvim-bak";
+    ".config/kitty" = configSymlink "kitty";
     ".config/rio" = configSymlink "rio";
     ".config/sketchybar/plugins" = configSymlink "sketchybar/plugins";
     ".config/sketchybar/sketchybarrc" = configSymlink "sketchybar/sketchybar.sh";
