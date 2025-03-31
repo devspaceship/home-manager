@@ -24,6 +24,9 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
 automatically-unhide-macos-hidden-apps = false
 
+[exec.env-vars]
+PATH = '/usr/local/bin/:${PATH}'
+
 [key-mapping]
 preset = 'qwerty'
 
