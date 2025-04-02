@@ -17,7 +17,7 @@ bar_options=(
   border_width=2
   blur_radius=64
   padding_left=0
-  padding_right=0
+  padding_right=20
   font_smoothing=on
 )
 sketchybar --bar "${bar_options[@]}"
@@ -66,7 +66,17 @@ done
 #   icon= \
 
 sketchybar --set space.1 \
-  icon.padding_left=20 \
+  icon.padding_left=20
+
+sketchybar --set space.A \
+  icon= \
+  icon.padding_right=10 \
+  --set space.M \
+  icon= \
+  icon.padding_right=10 \
+  --set space.S \
+  icon= \
+  icon.padding_right=10 \
   --set space.T \
   icon= \
   icon.padding_right=10
