@@ -25,7 +25,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 automatically-unhide-macos-hidden-apps = false
 
 [exec.env-vars]
-PATH = '/usr/local/bin/:${PATH}'
+PATH = '/usr/local/bin/:/opt/homebrew/bin/:${PATH}'
 
 [key-mapping]
 preset = 'qwerty'
@@ -43,7 +43,7 @@ inner.horizontal = 0
 inner.vertical = 0
 outer.left = 0
 outer.bottom = 0
-outer.top = [{ monitor."PHL" = 40 }, 0]
+outer.top = [{ monitor."PHL" = 60 }, 20]
 outer.right = 0
 
 # 'main' binding mode declaration

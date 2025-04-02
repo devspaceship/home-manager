@@ -1,24 +1,24 @@
-# This is a demo config to showcase some of the most important commands.
-# It is meant to be changed and configured, as it is intentionally kept sparse.
-# For a (much) more advanced configuration example see my dotfiles:
-# https://github.com/FelixKratz/dotfiles
-
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
-##### Bar Appearance #####
-# Configuring the general appearance of the bar.
-# These are only some of the options available. For all options see:
-# https://felixkratz.github.io/SketchyBar/config/bar
-# If you are looking for other colors, see the color picker:
-# https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
+# Bar Options
+bar_color=0x01000000
+bar_border_color=0xff00bb33
 
-sketchybar --bar position=top height=40 blur_radius=64 color=0x40000000
+bar_options=(
+  color=$bar_color
+  border_color=$bar_border_color
+  position=top
+  height=40
+  margin=10
+  y_offset=10
+  corner_radius=20
+  border_width=2
+  blur_radius=64
+  font_smoothing=on
+)
+sketchybar --bar "${bar_options[@]}"
 
-##### Changing Defaults #####
-# We now change some default values, which are applied to all further items.
-# For a full list of all available item properties see:
-# https://felixkratz.github.io/SketchyBar/config/items
-
+# Default Item Properties
 default=(
   padding_left=5
   padding_right=5
@@ -71,6 +71,14 @@ for sid in $(aerospace list-workspaces --all); do
     click_script="aerospace workspace $sid" \
     script="$CONFIG_DIR/plugins/aerospace.sh $sid"
 done
+
+# sketchybar --set space.A \
+#   icon= \
+#   --set space.T \
+#   icon= \
+
+sketchybar --set space.T \
+  icon=
 
 ##### Adding Left Items #####
 # We add some regular items to the left side of the bar, where
