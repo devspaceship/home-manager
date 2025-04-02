@@ -1,12 +1,14 @@
+#!/usr/bin/env bash
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
-# Bar Options
+# Colors
 bar_color=0x01000000
-bar_border_color=0xff00bb33
+border_color=0xff00bb33
 
+# Bar Options
 bar_options=(
-  color=$bar_color
-  border_color=$bar_border_color
+  color="$bar_color"
+  border_color="$border_color"
   position=top
   height=40
   margin=10
@@ -14,6 +16,8 @@ bar_options=(
   corner_radius=20
   border_width=2
   blur_radius=64
+  padding_left=0
+  padding_right=0
   font_smoothing=on
 )
 sketchybar --bar "${bar_options[@]}"
@@ -22,8 +26,8 @@ sketchybar --bar "${bar_options[@]}"
 default=(
   padding_left=5
   padding_right=5
-  icon.font="FiraCode Nerd Font Mono:Bold:17.0"
-  label.font="FiraCode Nerd Font Mono:Bold:14.0"
+  icon.font="FiraCode Nerd Font Mono:Retina:22"
+  label.font="FiraCode Nerd Font Mono:Retina:17"
   icon.color=0xffffffff
   label.color=0xffffffff
   icon.padding_left=4
@@ -33,52 +37,39 @@ default=(
 )
 sketchybar --default "${default[@]}"
 
-##### Adding Mission Control Space Indicators #####
-# Let's add some mission control spaces:
-# https://felixkratz.github.io/SketchyBar/config/components#space----associate-mission-control-spaces-with-an-item
-# to indicate active and available mission control spaces.
-
-# SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
-# for i in "${!SPACE_ICONS[@]}"; do
-#   sid="$(($i + 1))"
-#   space=(
-#     space="$sid"
-#     icon="${SPACE_ICONS[i]}"
-#     icon.padding_left=7
-#     icon.padding_right=7
-#     background.color=0x40ffffff
-#     background.corner_radius=5
-#     background.height=25
-#     label.drawing=off
-#     script="$PLUGIN_DIR/space.sh"
-#     click_script="yabai -m space --focus $sid"
-#   )
-#   sketchybar --add space space."$sid" left --set space."$sid" "${space[@]}"
-# done
-
 # Aerospace
 sketchybar --add event aerospace_workspace_change
 
+space=(
+  padding_left=0
+  padding_right=0
+  icon.padding_right=0
+  label.padding_left=0
+  background.color=0x000000
+  background.border_color="$border_color"
+  background.border_width=2
+  background.corner_radius=20
+  background.height=40
+  background.drawing=off
+)
 for sid in $(aerospace list-workspaces --all); do
   sketchybar --add item "space.$sid" left \
     --subscribe "space.$sid" aerospace_workspace_change \
     --set "space.$sid" \
-    background.color=0x44ffffff \
-    background.corner_radius=5 \
-    background.height=20 \
-    background.drawing=off \
+    "${space[@]}" \
     label="$sid" \
     click_script="aerospace workspace $sid" \
-    script="$CONFIG_DIR/plugins/aerospace.sh $sid"
+    script="$PLUGIN_DIR/aerospace.sh $sid"
 done
 
 # sketchybar --set space.A \
 #   icon= \
-#   --set space.T \
-#   icon= \
 
-sketchybar --set space.T \
-  icon=
+sketchybar --set space.1 \
+  icon.padding_left=20 \
+  --set space.T \
+  icon= \
+  icon.padding_right=10
 
 ##### Adding Left Items #####
 # We add some regular items to the left side of the bar, where
