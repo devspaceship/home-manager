@@ -2,3 +2,5 @@
 name = Thomas Saint-Gérand
 email = devspaceship@gmail.com
 
+[pull]
+	rebase = true
