@@ -38,6 +38,7 @@ in
     ".zshrc" = configSymlink "zsh/zshrc";
     ".config/aerospace/aerospace.toml" = configSymlink "aerospace/aerospace.toml";
     ".config/alacritty" = configSymlink "alacritty";
+    ".config/borders/bordersrc" = configSymlink "borders/borders.sh";
     ".config/htop/htoprc" = configSymlink "htop/htoprc";
     ".config/nix" = configSymlink "nix";
     ".config/nix-darwin" = configSymlink "nix-darwin";
