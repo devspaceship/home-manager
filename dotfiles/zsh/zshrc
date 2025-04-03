@@ -48,12 +48,12 @@ alias dcr='docker compose run'
 
 ## Home Manager
 alias hm='home-manager'
-alias hms='home-manager switch'
+alias hms='home-manager switch --flake .#devspaceship'
 
 ## Nvim
-alias vim='nvim'
-alias vi='nvim'
 alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
 
 ## Pnpm
 alias pn='pnpm'
@@ -71,7 +71,6 @@ alias tfp='terraform plan'
 alias tfa='terraform apply'
 
 ## Tmux
-alias tm='tmux'
 alias t='tmux'
 alias ta='tmux attach'
 
