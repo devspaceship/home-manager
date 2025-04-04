@@ -70,16 +70,16 @@ sketchybar --set space.1 \
 
 sketchybar --set space.A \
   icon= \
-  icon.padding_right=10 \
+  label='' \
   --set space.M \
   icon= \
-  icon.padding_right=10 \
+  label='' \
   --set space.S \
   icon= \
-  icon.padding_right=10 \
+  label='' \
   --set space.T \
   icon= \
-  icon.padding_right=10
+  label=''
 
 ##### Adding Left Items #####
 # We add some regular items to the left side of the bar, where
