@@ -45,6 +45,7 @@ in
     ".config/nvim" = configSymlink "nvim";
     ".config/nvim-bak" = configSymlink "nvim-bak";
     ".config/kitty" = configSymlink "kitty";
+    ".config/lazygit/config.yml" = configSymlink "lazygit/config.yml";
     ".config/rio" = configSymlink "rio";
     ".config/sketchybar/plugins" = configSymlink "sketchybar/plugins";
     ".config/sketchybar/sketchybarrc" = configSymlink "sketchybar/sketchybar.sh";
