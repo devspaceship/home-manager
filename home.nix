@@ -13,6 +13,7 @@ in
 
   home.packages = [
     pkgs.bat
+    pkgs.btop
     pkgs.cmatrix
     pkgs.fd
     pkgs.fzf
@@ -20,7 +21,6 @@ in
     pkgs.git
     pkgs.go
     pkgs.gopls
-    pkgs.htop
     pkgs.kitty
     pkgs.lazygit
     pkgs.neofetch
