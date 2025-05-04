@@ -40,6 +40,7 @@ return {
       "rust",
       "sql",
       "ssh_config",
+      "swift",
       "terraform",
       "toml",
       "tsx",
