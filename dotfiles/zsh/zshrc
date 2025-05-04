@@ -94,6 +94,9 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 fpath+="$HOME/.zsh/completions"
 
+# GPG
+export GPG_TTY=$(tty)
+
 # Created by `pipx` on 2024-01-11 22:09:36
 export PATH="$PATH:/Users/devspaceship/.local/bin"
 export PATH="$PATH:/usr/local/opt/ruby/bin"

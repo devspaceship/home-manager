@@ -35,6 +35,7 @@ in
 
   home.file = {
     ".gitconfig" = configSymlink "git/conf";
+    ".zprofile" = configSymlink "zsh/zprofile";
     ".zshrc" = configSymlink "zsh/zshrc";
     ".config/aerospace/aerospace.toml" = configSymlink "aerospace/aerospace.toml";
     ".config/alacritty" = configSymlink "alacritty";

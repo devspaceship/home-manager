@@ -1,6 +1,13 @@
 [user]
-name = Thomas Saint-Gérand
-email = devspaceship@gmail.com
+  name = Thomas Saint-Gérand
+  email = thomas@devspaceship.com
+  signingkey = 61B34E08A7F21020
 
 [pull]
 	rebase = true
+
+[commit]
+  gpgSign = true
+
+[tag]
+  gpgSign = true
