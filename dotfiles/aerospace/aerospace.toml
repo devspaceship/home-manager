@@ -55,6 +55,7 @@ alt-a = 'workspace A' # Ableton
 alt-m = 'workspace M' # Main browser
 alt-s = 'workspace S' # Spotify
 alt-t = 'workspace T' # Terminal
+alt-y = 'workspace Y' # YouTube
 
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
@@ -65,6 +66,7 @@ alt-shift-a = 'move-node-to-workspace A'
 alt-shift-m = 'move-node-to-workspace M'
 alt-shift-s = 'move-node-to-workspace S'
 alt-shift-t = 'move-node-to-workspace T'
+alt-shift-y = 'move-node-to-workspace Y'
 
 alt-tab = 'workspace-back-and-forth'
 

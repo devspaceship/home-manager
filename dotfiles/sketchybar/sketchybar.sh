@@ -66,6 +66,10 @@ sketchybar --set space.A \
   --set space.T \
   icon= \
   icon.drawing=on \
+  label.drawing=off \
+  --set space.Y \
+  icon= \
+  icon.drawing=on \
   label.drawing=off
 
 # Font App
