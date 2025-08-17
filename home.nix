@@ -40,14 +40,12 @@ in
     ".config/aerospace/aerospace.toml" = configSymlink "aerospace/aerospace.toml";
     ".config/alacritty" = configSymlink "alacritty";
     ".config/borders/bordersrc" = configSymlink "borders/borders.sh";
-    ".config/htop/htoprc" = configSymlink "htop/htoprc";
     ".config/nix" = configSymlink "nix";
     ".config/nix-darwin" = configSymlink "nix-darwin";
     ".config/nvim" = configSymlink "nvim";
     ".config/nvim-bak" = configSymlink "nvim-bak";
     ".config/kitty" = configSymlink "kitty";
     ".config/lazygit/config.yml" = configSymlink "lazygit/config.yml";
-    ".config/rio" = configSymlink "rio";
     ".config/sketchybar/plugins" = configSymlink "sketchybar/plugins";
     ".config/sketchybar/sketchybarrc" = configSymlink "sketchybar/sketchybar.sh";
     ".config/starship.toml" = configSymlink "starship/starship.toml";
