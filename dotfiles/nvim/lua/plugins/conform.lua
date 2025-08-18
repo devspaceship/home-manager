@@ -4,13 +4,7 @@ return {
     formatters_by_ft = {
       go = { "goimports", "gofmt" },
       lua = { "stylua" },
-      python = function(bufnr)
-        if require("conform").get_formatter_info("ruff_format", bufnr).available then
-          return { "ruff_format" }
-        else
-          return { "isort", "black" }
-        end
-      end,
+      python = { "isort", "black" },
       rust = { "rustfmt" },
       sh = { "shfmt" },
     },
