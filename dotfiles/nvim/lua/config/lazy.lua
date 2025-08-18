@@ -20,9 +20,6 @@ require("lazy").setup({
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- LazyVim Extras
     { import = "extras" },
-    -- TODO move to wepublic branch
-    { import = "lazyvim.plugins.extras.linting.eslint" },
-    { import = "lazyvim.plugins.extras.formatting.prettier" },
     -- Custom
     { import = "plugins" },
   },
