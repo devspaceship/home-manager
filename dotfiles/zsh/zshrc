@@ -15,6 +15,7 @@ plugins=(
     git
     gitfast
     golang
+    poetry
     rust
     ssh
     sudo
