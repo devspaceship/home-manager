@@ -1,5 +1,10 @@
 return {
   "akinsho/bufferline.nvim",
+  opts = {
+    options = {
+      always_show_bufferline = true,
+    },
+  },
   -- TEMP
   -- Until LazyVim follows the rename
   init = function()
