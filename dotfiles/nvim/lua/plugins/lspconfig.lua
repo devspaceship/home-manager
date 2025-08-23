@@ -1,10 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
-  ---@class PluginLspOpts
-  opts = {
-    servers = {
-      -- Swift
-      sourcekit = {},
-    },
-  },
+  opts = function()
+    vim.lsp.enable("sourcekit")
+  end,
 }
