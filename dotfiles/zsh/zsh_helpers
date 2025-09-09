@@ -1,0 +1,31 @@
+# Debug
+DEBUG=0
+
+if_debug() {
+  if [ "$DEBUG" = "1" ]; then
+    "$@"
+  fi
+}
+
+# Path
+typeset -U PATH path fpath
+
+path_prepend() {
+  local p
+  for p in "$@"; do
+    [[ -d "$p" ]] && path=("$p" $path)
+  done
+}
+
+path_append() {
+  local p
+  for p in "$@"; do
+    [[ -d "$p" ]] && path+=("$p")
+  done
+}
+
+path_print() {
+  echo '============'
+  echo "$1"
+  echo "$PATH" | tr ':' '\n'
+}
