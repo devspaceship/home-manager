@@ -69,10 +69,7 @@ return {
       -- TOML
       "taplo",
       -- TypeScript
-      "biome",
-      "eslint_d",
       "js-debug-adapter",
-      "prettier",
       "vtsls",
       -- YAML
       "yaml-language-server",
