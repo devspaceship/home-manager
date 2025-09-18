@@ -3,7 +3,6 @@ return {
   opts = {
     formatters_by_ft = {
       go = { "goimports", "gofmt" },
-      javascript = { "prettierd", "prettier", stop_after_first = true },
       lua = { "stylua" },
       python = function(bufnr)
         if require("conform").get_formatter_info("ruff_format", bufnr).available then
