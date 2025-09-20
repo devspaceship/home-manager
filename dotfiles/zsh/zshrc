@@ -76,11 +76,6 @@ alias ta='tmux attach'
 # Starship Prompt
 eval "$(starship init zsh)"
 
-# Ruby
-eval "$(rbenv init - zsh)"
-## fix pre-commit being shadowed by rbenv
-alias pre-commit=/usr/local/bin/pre-commit
-
 # NVM
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
