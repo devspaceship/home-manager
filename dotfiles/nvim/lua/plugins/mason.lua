@@ -10,7 +10,6 @@ return {
       "shellcheck",
       "shfmt",
       -- CSS
-      "css-lsp",
       "tailwindcss-language-server",
       -- Docker
       "docker-language-server",
