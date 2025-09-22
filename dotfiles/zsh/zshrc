@@ -55,10 +55,8 @@ alias vi='nvim'
 alias vim='nvim'
 
 ## Pnpm
-alias pn='pnpm'
-alias pnx='pnpx'
-alias npm='pnpm'
-alias npx='pnpx'
+alias p='pnpm'
+alias px='pnpx'
 
 ## Git
 alias lg='lazygit'
