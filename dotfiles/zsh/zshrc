@@ -79,6 +79,9 @@ eval "$(starship init zsh)"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
+# Ruby
+alias pre-commit=/usr/local/bin/pre-commit
+
 path_prepend "$HOME/bin"
 path_prepend "$HOME/.swiftly/bin"
 export PATH
