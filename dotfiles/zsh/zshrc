@@ -80,6 +80,8 @@ eval "$(starship init zsh)"
 
 path_prepend "$HOME/bin"
 path_prepend "$HOME/.swiftly/bin"
+path_prepend "$HOME/.cargo/bin"
+path_prepend "$HOME/.nix-profile/bin"
 export PATH
 
 if_debug path_print '$PATH after zshrc'

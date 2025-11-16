@@ -7,7 +7,7 @@
 
 ## Usage
 
-```
+```txt
 > make
 usage: make [command]
   help      Show this help message
