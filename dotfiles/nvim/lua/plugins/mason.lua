@@ -65,6 +65,9 @@ return {
       -- Terraform
       "terraform-ls",
       "tflint",
+      -- TeX
+      "tex-fmt",
+      "texlab",
       -- TOML
       "taplo",
       -- TypeScript
