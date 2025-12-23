@@ -46,6 +46,7 @@ in
       pkgs.tmux
       pkgs.tree
       pkgs.yazi
+      pkgs.zathura
       pkgs.zellij
       # (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
     ];
