@@ -1,9 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   opts = function(_, opts)
-    opts.indent = { enable = true }
-    opts.highlight = { enable = true }
-    opts.folds = { enable = true }
     opts.ensure_installed = {
       "arduino",
       "bash",
