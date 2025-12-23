@@ -7,3 +7,6 @@ vim.opt.completeopt:append("popup")
 vim.lsp.enable("sourcekit")
 vim.lsp.enable("biome")
 vim.lsp.enable("racket_langserver")
+
+-- VimTex
+vim.g.vimtex_view_method = "zathura"

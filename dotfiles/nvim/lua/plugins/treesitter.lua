@@ -1,7 +1,10 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  opts = {
-    ensure_installed = {
+  opts = function(_, opts)
+    opts.indent = { enable = true }
+    opts.highlight = { enable = true }
+    opts.folds = { enable = true }
+    opts.ensure_installed = {
       "arduino",
       "bash",
       "c",
@@ -36,6 +39,7 @@ return {
       "printf",
       "python",
       "query",
+      "racket",
       "regex",
       "rust",
       "sql",
@@ -49,6 +53,6 @@ return {
       "vimdoc",
       "xml",
       "yaml",
-    },
-  },
+    }
+  end,
 }
