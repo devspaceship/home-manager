@@ -78,10 +78,10 @@ eval "$(starship init zsh)"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-path_prepend "$HOME/bin"
 path_prepend "$HOME/.swiftly/bin"
 path_prepend "$HOME/.cargo/bin"
 path_prepend "$HOME/.nix-profile/bin"
+path_prepend "$HOME/bin"
 export PATH
 
 if_debug path_print '$PATH after zshrc'
