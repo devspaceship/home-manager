@@ -31,7 +31,7 @@ in
       cmatrix
       fd
       fzf
-      gcr
+      gcc
       gh
       git
       gnumake
@@ -41,22 +41,30 @@ in
       gopls
       kitty
       lazygit
-      libgcc
+      luajitPackages.luarocks
       mise
       neofetch
       neovim
+      nil
+      nixfmt
       nmap
       nodejs_24
       oh-my-zsh
       pinentry-curses
       prismlauncher
       protonup-qt
-      python314
+      python313
+      python313Packages.pip
       ripgrep
-      rocmPackages.llvm.clang-unwrapped
+      rustup
       starship
+      statix
+      stylua
       tmux
       tree
+      tree-sitter
+      unzip
+      wget
       yazi
       zathura
       zellij
@@ -83,8 +91,6 @@ in
       ".config/starship.toml" = configSymlink "starship/starship.toml";
       ".config/tmux/tmux.conf" = configSymlink "tmux/tmux.conf";
       ".config/tmux/tmux.conf.local" = configSymlink "tmux/tmux.conf.local";
-
-      "bin/cc".source = "${pkgs.rocmPackages.llvm.clang-unwrapped}/bin/clang";
     };
 
     sessionVariables = {
@@ -95,10 +101,10 @@ in
   programs.home-manager.enable = true;
 
   services.gpg-agent = {
-      enable = true;
-      enableSshSupport = true;
-      enableZshIntegration = true;
-      pinentry.package = pkgs.pinentry-curses;
-      pinentry.program = "pinentry-curses";
-    };
+    enable = true;
+    enableSshSupport = true;
+    enableZshIntegration = true;
+    pinentry.package = pkgs.pinentry-curses;
+    pinentry.program = "pinentry-curses";
+  };
 }

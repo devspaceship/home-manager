@@ -4,8 +4,11 @@
 vim.opt.completeopt:append("popup")
 
 -- LSP
+vim.lsp.config("sourcekit", {})
 vim.lsp.enable("sourcekit")
+vim.lsp.config("biome", {})
 vim.lsp.enable("biome")
+vim.lsp.config("racket-langserver", {})
 vim.lsp.enable("racket_langserver")
 
 -- VimTex

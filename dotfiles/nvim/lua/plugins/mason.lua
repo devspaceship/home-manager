@@ -42,7 +42,6 @@ return {
       "nginx-language-server",
       -- Nix
       "nil",
-      "nixfmt",
       -- Python
       "black",
       "debugpy",
@@ -62,7 +61,7 @@ return {
       "swiftlint",
       "xcbeautify",
       -- Systemd
-      "systemd-language-server",
+      "systemd-lsp",
       -- Terraform
       "terraform-ls",
       "tflint",
