@@ -80,11 +80,12 @@ in
       ".config/aerospace/aerospace.toml" = configSymlink "aerospace/aerospace.toml";
       ".config/alacritty" = configSymlink "alacritty";
       ".config/borders/bordersrc" = configSymlink "borders/borders.sh";
+      ".config/hypr/hyprland.conf" = configSymlink "hypr/hyprland.conf";
+      ".config/kitty" = configSymlink "kitty";
       ".config/nix" = configSymlink "nix";
       ".config/nix-darwin" = configSymlink "nix-darwin";
       ".config/nvim" = configSymlink "nvim";
       ".config/nvim-bak" = configSymlink "nvim-bak";
-      ".config/kitty" = configSymlink "kitty";
       ".config/lazygit/config.yml" = configSymlink "lazygit/config.yml";
       ".config/sketchybar/plugins" = configSymlink "sketchybar/plugins";
       ".config/sketchybar/sketchybarrc" = configSymlink "sketchybar/sketchybar.sh";

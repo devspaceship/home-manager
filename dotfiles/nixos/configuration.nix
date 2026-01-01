@@ -7,57 +7,92 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  hardware.enableAllFirmware = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia = {
-    nvidiaSettings = true;
-    modesetting.enable = true;
-    open = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  hardware = {
+    enableAllFirmware = true;
+    nvidia = {
+      nvidiaSettings = true;
+      modesetting.enable = true;
+      open = true;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+    };
+    keyboard.zsa.enable = true;
+    bluetooth.enable = true;
   };
 
-  hardware.keyboard.zsa.enable = true;
+  programs = {
 
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+    };
+
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+      xwayland.enable = true;
+    };
+
+    nix-ld.enable = true;
+
+    # dconf.profiles.user.databases = [
+    #   {
+    #     settings."org/gnome/desktop/interface" = {
+    #       gtk-theme = "Adwaita";
+    #       icon-theme = "Flat-Remix-Red-Dark";
+    #       font-name = "Noto Sans Medium 11";
+    #       document-font-name = "Noto Sans Medium 11";
+    #       monospace-font-name = "Noto Sans Mono Medium 11";
+    #     };
+    #   }
+    # ];
+
+    zsh.enable = true;
   };
 
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
-    xwayland.enable = true;
-  };
-
-  programs.nix-ld.enable = true;
-
-  programs.dconf.profiles.user.databases = [
-    {
-      settings."org/gnome/desktop/interface" = {
-        gtk-theme = "Adwaita";
-        icon-theme = "Flat-Remix-Red-Dark";
-        font-name = "Noto Sans Medium 11";
-        document-font-name = "Noto Sans Medium 11";
-        monospace-font-name = "Noto Sans Mono Medium 11";
+  services = {
+    xserver = {
+      videoDrivers = [ "nvidia" ];
+      enable = true;
+      xkb = {
+        layout = "us";
+        variant = "";
       };
-    }
-  ];
+    };
 
-  networking.hostName = "nixos"; # Define your hostname.
+    displayManager.gdm.enable = true;
+    # desktopManager.gnome.enable = true;
+
+    blueman.enable = true;
+
+    printing.enable = true;
+
+    pulseaudio.enable = false;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      # If you want to use JACK applications, uncomment this
+      #jack.enable = true;
+
+      # use the example session manager (no others are packaged yet so this is enabled by default,
+      # no need to redefine it in your config for now)
+      #media-session.enable = true;
+    };
+  };
+
+  networking.hostName = "nix-home";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
 
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -72,37 +107,7 @@
     LC_TIME = "nl_NL.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -115,20 +120,16 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [
-    ];
+    # packages = with pkgs; [
+    # ];
   };
-
-  programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
+    # networkmanagerapplet
+    blueberry
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
