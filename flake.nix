@@ -15,9 +15,9 @@
 
   outputs = { nixpkgs, home-manager, nixgl, ... }:
     let
-      # system = "x86_64-linux";
+      system = "x86_64-linux";
       # system = "x86_64-darwin";
-      system = "aarch64-darwin";
+      # system = "aarch64-darwin";
       pkgs = import nixpkgs {
         inherit system;
         overlays = [ nixgl.overlay ];

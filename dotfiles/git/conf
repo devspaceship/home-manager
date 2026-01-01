@@ -1,7 +1,7 @@
 [user]
   name = Thomas Saint-Gérand
   email = thomas@devspaceship.com
-  signingkey = 61B34E08A7F21020
+  signingkey = AEB03E05852C3F4B
 
 [pull]
 	rebase = true

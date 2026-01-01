@@ -16,38 +16,51 @@ in
   ];
   # TEMP
 
+  nixpkgs.config.allowUnfree = true;
+
   home = {
 
     username = "devspaceship";
-    # homeDirectory = "/home/devspaceship";
-    homeDirectory = "/Users/devspaceship";
+    homeDirectory = "/home/devspaceship";
     stateVersion = "24.11";
 
-    packages = [
-      pkgs.bash
-      pkgs.bat
-      pkgs.btop
-      pkgs.cmatrix
-      pkgs.fd
-      pkgs.fzf
-      pkgs.gh
-      pkgs.git
-      pkgs.go
-      pkgs.gopls
-      pkgs.kitty
-      pkgs.lazygit
-      pkgs.mise
-      pkgs.neofetch
-      pkgs.neovim
-      pkgs.nmap
-      pkgs.python314
-      pkgs.ripgrep
-      pkgs.starship
-      pkgs.tmux
-      pkgs.tree
-      pkgs.yazi
-      pkgs.zathura
-      pkgs.zellij
+    packages = with pkgs; [
+      bash
+      bat
+      btop
+      cmatrix
+      fd
+      fzf
+      gcr
+      gh
+      git
+      gnumake
+      gnupg
+      go
+      google-chrome
+      gopls
+      kitty
+      lazygit
+      libgcc
+      mise
+      neofetch
+      neovim
+      nmap
+      nodejs_24
+      oh-my-zsh
+      pinentry-curses
+      prismlauncher
+      protonup-qt
+      python314
+      ripgrep
+      rocmPackages.llvm.clang-unwrapped
+      starship
+      tmux
+      tree
+      yazi
+      zathura
+      zellij
+      zsh
       # (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
     ];
 
@@ -70,6 +83,8 @@ in
       ".config/starship.toml" = configSymlink "starship/starship.toml";
       ".config/tmux/tmux.conf" = configSymlink "tmux/tmux.conf";
       ".config/tmux/tmux.conf.local" = configSymlink "tmux/tmux.conf.local";
+
+      "bin/cc".source = "${pkgs.rocmPackages.llvm.clang-unwrapped}/bin/clang";
     };
 
     sessionVariables = {
@@ -78,4 +93,12 @@ in
   };
 
   programs.home-manager.enable = true;
+
+  services.gpg-agent = {
+      enable = true;
+      enableSshSupport = true;
+      enableZshIntegration = true;
+      pinentry.package = pkgs.pinentry-curses;
+      pinentry.program = "pinentry-curses";
+    };
 }

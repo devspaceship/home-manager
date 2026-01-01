@@ -42,6 +42,7 @@ return {
       "nginx-language-server",
       -- Nix
       "nil",
+      "nixfmt",
       -- Python
       "black",
       "debugpy",
