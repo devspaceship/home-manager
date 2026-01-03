@@ -137,9 +137,11 @@
   environment.systemPackages = with pkgs; [
     blueberry
     hyprlauncher
+    hyprlock
     hyprpaper
     hyprsysteminfo
     waybar
+    wev
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

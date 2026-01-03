@@ -51,6 +51,7 @@ in
       nmap
       nodejs_24
       oh-my-zsh
+      opencode
       pinentry-curses
       prismlauncher
       protonup-qt
