@@ -137,6 +137,7 @@
   environment.systemPackages = with pkgs; [
     blueberry
     hyprlauncher
+    hyprpaper
     hyprsysteminfo
     waybar
   ];

@@ -80,7 +80,7 @@ in
       ".config/aerospace/aerospace.toml" = configSymlink "aerospace/aerospace.toml";
       ".config/alacritty" = configSymlink "alacritty";
       ".config/borders/bordersrc" = configSymlink "borders/borders.sh";
-      ".config/hypr/hyprland.conf" = configSymlink "hypr/hyprland.conf";
+      ".config/hypr" = configSymlink "hypr";
       ".config/kitty" = configSymlink "kitty";
       ".config/nix" = configSymlink "nix";
       ".config/nix-darwin" = configSymlink "nix-darwin";
