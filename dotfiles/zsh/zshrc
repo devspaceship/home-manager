@@ -24,6 +24,7 @@ plugins=(
     timer
 )
 
+export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 fpath+="$HOME/.zsh/completions"
 

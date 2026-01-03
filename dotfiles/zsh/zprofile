@@ -2,26 +2,20 @@
 
 if_debug path_print '$PATH before zprofile'
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
 # Nix
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 fi
 # End Nix
 
-# Added by swiftly
-. "/Users/devspaceship/.swiftly/env.sh"
-
 export LANG=en_US.UTF-8
-export TERM="xterm-256color"
+export TERM="tmux-256color"
 export COLORTERM="truecolor"
 export EDITOR="nvim"
 export MANPATH="/usr/local/man:$MANPATH"
 export XDG_CONFIG_HOME="$HOME/.config"
 export ZSH="$HOME/.oh-my-zsh"
 export GPG_TTY=$(tty)
-
 export PNPM_HOME="$HOME/Library/pnpm"
 export NVM_DIR="$HOME/.nvm"
 
