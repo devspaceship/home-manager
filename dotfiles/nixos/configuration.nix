@@ -122,8 +122,9 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.devspaceship = {
     isNormalUser = true;
-    description = "Thomas Saint-Gerand";
+    description = "Thomas Saint-Gérand";
     extraGroups = [
+      "input"
       "networkmanager"
       "wheel"
     ];
@@ -142,6 +143,7 @@
     hyprsysteminfo
     waybar
     wev
+    xdg-desktop-portal-hyprland
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
