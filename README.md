@@ -4,6 +4,8 @@
 
 1. Install Nix and Home Manager
 2. Clone this repository to `~/.config/home-manager`
+3. `cp dotfiles/git/conf.example dotfiles/git/conf`
+4. Edit `dotfiles/git/conf`
 
 ## Usage
 
