@@ -47,6 +47,7 @@
     #   }
     # ];
 
+    seahorse.enable = true;
     zsh.enable = true;
   };
 
@@ -88,14 +89,12 @@
       # no need to redefine it in your config for now)
       #media-session.enable = true;
     };
+
+    gnome.gnome-keyring.enable = true;
   };
 
   networking.hostName = "nix-home";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   networking.networkmanager.enable = true;
 
