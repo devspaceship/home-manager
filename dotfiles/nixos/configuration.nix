@@ -50,6 +50,13 @@
     zsh.enable = true;
   };
 
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-color-emoji
+    nerd-fonts.fira-code
+  ];
+
   services = {
     xserver = {
       videoDrivers = [ "nvidia" ];
@@ -60,10 +67,11 @@
       };
     };
 
-    displayManager.gdm.enable = true;
-    # desktopManager.gnome.enable = true;
-
-    blueman.enable = true;
+    displayManager.gdm = {
+      banner = "@devspaceship";
+      enable = true;
+      wayland = true;
+    };
 
     printing.enable = true;
 
@@ -128,8 +136,10 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    # networkmanagerapplet
     blueberry
+    hyprlauncher
+    hyprsysteminfo
+    waybar
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
