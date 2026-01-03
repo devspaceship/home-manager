@@ -33,6 +33,7 @@ in
       fzf
       gcc
       gh
+      gimp2
       git
       gnumake
       gnupg
