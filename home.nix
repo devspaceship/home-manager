@@ -70,7 +70,6 @@ in
       zathura
       zellij
       zsh
-      # (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
     ];
 
     file = {
@@ -93,6 +92,7 @@ in
       ".config/starship.toml" = configSymlink "starship/starship.toml";
       ".config/tmux/tmux.conf" = configSymlink "tmux/tmux.conf";
       ".config/tmux/tmux.conf.local" = configSymlink "tmux/tmux.conf.local";
+      ".config/waybar/config.jsonc" = configSymlink "waybar/config.jsonc";
     };
 
     sessionVariables = {
