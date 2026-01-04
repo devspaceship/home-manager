@@ -138,6 +138,7 @@
     hyprlock
     hyprpaper
     hyprsysteminfo
+    nwg-look
     waybar
     wev
     xdg-desktop-portal-hyprland

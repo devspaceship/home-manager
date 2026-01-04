@@ -83,6 +83,7 @@ in
       ".config/aerospace/aerospace.toml" = configSymlink "aerospace/aerospace.toml";
       ".config/alacritty" = configSymlink "alacritty";
       ".config/borders/bordersrc" = configSymlink "borders/borders.sh";
+      ".config/btop" = configSymlink "btop";
       ".config/hypr" = configSymlink "hypr";
       ".config/kitty" = configSymlink "kitty";
       ".config/nix" = configSymlink "nix";
