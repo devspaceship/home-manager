@@ -34,20 +34,8 @@
     };
 
     nix-ld.enable = true;
-
-    # dconf.profiles.user.databases = [
-    #   {
-    #     settings."org/gnome/desktop/interface" = {
-    #       gtk-theme = "Adwaita";
-    #       icon-theme = "Flat-Remix-Red-Dark";
-    #       font-name = "Noto Sans Medium 11";
-    #       document-font-name = "Noto Sans Medium 11";
-    #       monospace-font-name = "Noto Sans Mono Medium 11";
-    #     };
-    #   }
-    # ];
-
     seahorse.enable = true;
+    wayvnc.enable = true;
     zsh.enable = true;
   };
 
@@ -93,10 +81,19 @@
     gnome.gnome-keyring.enable = true;
   };
 
-  networking.hostName = "nix-home";
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "nix-home";
+    # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+    networkmanager.enable = true;
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [
+        22
+        5900
+      ];
+      logRefusedPackets = true;
+    };
+  };
 
   time.timeZone = "Europe/Amsterdam";
 

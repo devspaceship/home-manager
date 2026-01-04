@@ -43,6 +43,7 @@ in
       kitty
       lazygit
       luajitPackages.luarocks
+      lua51Packages.lua
       mise
       neofetch
       neovim
@@ -52,7 +53,7 @@ in
       nodejs_24
       oh-my-zsh
       opencode
-      pinentry-curses
+      pinentry-gnome3
       prismlauncher
       protonup-qt
       python313
@@ -63,6 +64,7 @@ in
       statix
       stylua
       tmux
+      trash-cli
       tree
       tree-sitter
       unzip
@@ -107,7 +109,7 @@ in
     enable = true;
     enableSshSupport = true;
     enableZshIntegration = true;
-    pinentry.package = pkgs.pinentry-curses;
-    pinentry.program = "pinentry-curses";
+    pinentry.package = pkgs.pinentry-gnome3;
+    pinentry.program = "pinentry-gnome3";
   };
 }
