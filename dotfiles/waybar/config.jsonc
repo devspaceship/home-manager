@@ -1,8 +1,10 @@
 // -*- mode: jsonc -*-
 {
-  "spacing": 6, // Gaps between modules (4px)
+  "spacing": 6,
   "modules-left": [
+    "custom/nix",
     "hyprland/workspaces",
+    "hyprland/submap",
     "custom/media"
   ],
   "modules-center": [
@@ -13,18 +15,14 @@
     "idle_inhibitor",
     "pulseaudio",
     "network",
-    "power-profiles-daemon",
     "cpu",
     "memory",
     "temperature",
-    "keyboard-state",
     "hyprland/language",
-    "battery",
-    "battery#bat2",
     "clock",
-    "tray",
-    "custom/power"
+    "tray"
   ],
+  "fixed-center": false,
   // Modules configuration
   // "hyprland/workspaces": {
   //     "disable-scroll": true,
@@ -42,18 +40,6 @@
   //         "default": ""
   //     }
   // },
-  "keyboard-state": {
-    "numlock": true,
-    "capslock": true,
-    "format": "{name} {icon}",
-    "format-icons": {
-      "locked": "",
-      "unlocked": ""
-    }
-  },
-  "hyprland/mode": {
-    "format": "<span style=\"italic\">{}</span>"
-  },
   "hyprland/scratchpad": {
     "format": "{icon} {count}",
     "show-empty": false,
@@ -129,56 +115,6 @@
       ""
     ]
   },
-  "backlight": {
-    // "device": "acpi_video1",
-    "format": "{percent}% {icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
-  },
-  "battery": {
-    "states": {
-      // "good": 95,
-      "warning": 30,
-      "critical": 15
-    },
-    "format": "{capacity}% {icon}",
-    "format-full": "{capacity}% {icon}",
-    "format-charging": "{capacity}% ",
-    "format-plugged": "{capacity}% ",
-    "format-alt": "{time} {icon}",
-    // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
-  },
-  "battery#bat2": {
-    "bat": "BAT2"
-  },
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    "tooltip": true,
-    "format-icons": {
-      "default": "",
-      "performance": "",
-      "balanced": "",
-      "power-saver": ""
-    }
-  },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
     "format-wifi": "{essid} ({signalStrength}%) ",
@@ -210,6 +146,9 @@
       ]
     },
     "on-click": "pavucontrol"
+  },
+  "custom/nix": {
+    "format": ""
   },
   "custom/media": {
     "format": "{icon} {text}",
