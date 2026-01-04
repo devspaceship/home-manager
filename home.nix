@@ -84,6 +84,8 @@ in
       ".config/alacritty" = configSymlink "alacritty";
       ".config/borders/bordersrc" = configSymlink "borders/borders.sh";
       ".config/btop" = configSymlink "btop";
+      ".config/gtk-3.0" = configSymlink "gtk-3.0";
+      ".config/gtk-4.0" = configSymlink "gtk-4.0";
       ".config/hypr" = configSymlink "hypr";
       ".config/kitty" = configSymlink "kitty";
       ".config/nix" = configSymlink "nix";
