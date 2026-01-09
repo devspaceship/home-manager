@@ -24,7 +24,6 @@ plugins=(
     timer
 )
 
-export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 fpath+="$HOME/.zsh/completions"
 
@@ -45,10 +44,6 @@ alias dcl='docker compose logs'
 alias dclf='docker compose logs -f'
 alias dce='docker compose exec'
 alias dcr='docker compose run'
-
-## Home Manager
-alias hm='home-manager'
-alias hms='home-manager switch --flake .#devspaceship'
 
 ## Nvim
 alias v='nvim'
@@ -86,3 +81,11 @@ path_prepend "$HOME/bin"
 export PATH
 
 if_debug path_print '$PATH after zshrc'
+
+# pnpm
+export PNPM_HOME="/Users/thomas/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

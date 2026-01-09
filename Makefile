@@ -8,11 +8,13 @@ help:
 
 .PHONY: install
 install:
-	home-manager switch
+	home-manager switch \
+		--flake ~/.config/home-manager#${DEVSPACE}
 
 .PHONY: update
 update:
-	nix flake update
+	nix flake update \
+		--flake ~/.config/home-manager
 
 .PHONY: upgrade
 upgrade: update install

@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configuration of devspaceship";
+  description = "home-manager";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -7,27 +7,46 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixgl = {
-      url = "github:nix-community/nixGL";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { nixpkgs, home-manager, nixgl, ... }:
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      ...
+    }:
     let
-      system = "x86_64-linux";
-      # system = "x86_64-darwin";
-      # system = "aarch64-darwin";
-      pkgs = import nixpkgs {
-        inherit system;
-        overlays = [ nixgl.overlay ];
-      };
+      mkHomeConfiguration =
+        { system, machine }:
+        let
+          pkgs = import nixpkgs {
+            inherit system;
+          };
+        in
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            ./common.nix
+            ./machines/${machine}.nix
+          ];
+        };
     in
     {
-      homeConfigurations."devspaceship" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [ ./home.nix ];
+      homeConfigurations = {
+        home = mkHomeConfiguration {
+          system = "x86_64-linux";
+          machine = "home";
+        };
+
+        laptop = mkHomeConfiguration {
+          system = "aarch64-darwin";
+          machine = "laptop";
+        };
+
+        work = mkHomeConfiguration {
+          system = "aarch64-darwin";
+          machine = "work";
+        };
       };
     };
 }
-
