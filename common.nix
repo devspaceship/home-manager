@@ -36,9 +36,11 @@ in
       gnupg
       go
       gopls
+      go-task
       kitty
       lazygit
       luajitPackages.luarocks
+      mbake
       neofetch
       neovim
       nerd-fonts.fira-code

@@ -12,7 +12,20 @@ return {
         end
       end,
       rust = { "rustfmt" },
-      sh = { "shfmt" },
+      sh = function(_)
+        if os.getenv("DEVSPACE") == "work" then
+          return { "trunk" }
+        else
+          return { "shfmt" }
+        end
+      end,
+    },
+    formatters = {
+      trunk = {
+        command = "trunk",
+        args = { "fmt", "$FILENAME" },
+        stdin = false,
+      },
     },
   },
 }

@@ -33,6 +33,7 @@ return {
       "stylua",
       -- Makefile
       "autotools-language-server",
+      "mbake",
       -- Markdown
       "markdown-toc",
       "markdownlint",
@@ -41,7 +42,7 @@ return {
       "nginx-config-formatter",
       "nginx-language-server",
       -- Nix
-      "nil",
+      -- "nil",
       -- Python
       "black",
       "debugpy",
