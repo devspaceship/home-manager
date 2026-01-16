@@ -34,6 +34,7 @@ return {
       "nginx",
       "nix",
       "printf",
+      "prisma",
       "python",
       "query",
       "racket",
