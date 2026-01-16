@@ -1,9 +1,6 @@
 { config, pkgs, ... }:
 let
-  configSymlink = fileName: {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.xdg.configHome}/home-manager/dotfiles/${fileName}";
-  };
-
+  inherit (import ./lib.nix { inherit config; }) configSymlink;
 in
 {
   # TEMP: disable broken tests

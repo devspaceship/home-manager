@@ -22,13 +22,15 @@
           pkgs = import nixpkgs {
             inherit system;
           };
+          platformModules = if pkgs.stdenv.isDarwin then [ ./modules/darwin.nix ] else [ ];
         in
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
             ./common.nix
             ./machines/${machine}.nix
-          ];
+          ]
+          ++ platformModules;
         };
     in
     {
