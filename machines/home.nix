@@ -21,10 +21,10 @@ in
       ".config/hypr" = configSymlink "hypr";
       ".config/waybar" = configSymlink "waybar";
     };
+  };
 
-    services.gpg-agent = {
-      pinentry.package = pkgs.pinentry-gnome3;
-      pinentry.program = "pinentry-gnome3";
-    };
+  services.gpg-agent = {
+    pinentry.package = pkgs.pinentry-gnome3;
+    pinentry.program = "pinentry-gnome3";
   };
 }

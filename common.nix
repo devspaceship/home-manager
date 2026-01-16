@@ -49,7 +49,6 @@ in
       nmap
       oh-my-zsh
       opencode
-      pinentry-curses
       python313
       python313Packages.pip
       ripgrep
@@ -94,7 +93,5 @@ in
     enable = true;
     enableSshSupport = true;
     enableZshIntegration = true;
-    pinentry.package = pkgs.pinentry-curses;
-    pinentry.program = "pinentry-curses";
   };
 }

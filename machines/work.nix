@@ -13,6 +13,7 @@ in
     packages = with pkgs; [
       jankyborders
       sketchybar
+      pinentry_mac
     ];
 
     file = {
@@ -22,5 +23,10 @@ in
       ".config/sketchybar/plugins" = configSymlink "sketchybar/plugins";
       ".config/sketchybar/sketchybarrc" = configSymlink "sketchybar/sketchybar.sh";
     };
+  };
+
+  services.gpg-agent = {
+    pinentry.package = pkgs.pinentry_mac;
+    pinentry.program = "pinentry-mac";
   };
 }
