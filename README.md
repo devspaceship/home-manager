@@ -1,5 +1,10 @@
 # Home Manager
 
+## Requirements
+
+- Nix
+- Home Manager
+
 ## Installation
 
 1. Install Nix
@@ -9,15 +14,14 @@
 5. Edit `dotfiles/git/conf`
 6. `cp .env.example .env`
 7. Edit `.env`
-8. Apply the configuration: `make upgrade`
+8. Apply the configuration: `task upgrade`
 
 ## Usage
 
 ```txt
-> make
-usage: make [command]
-  help      Show this help message
-  install   Install the flake
-  update    Update the flake lock
-  upgrade   Update the flake lock and install the flake
+❯ task
+task: Available tasks for this project:
+* install:       Install the flake
+* update:        Update the flake lock
+* upgrade:       Update the flake lock and install the flake
 ```

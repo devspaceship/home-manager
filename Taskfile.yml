@@ -1,0 +1,33 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  HOME_MANAGER: ~/.config/home-manager
+
+tasks:
+  default:
+    cmds:
+      - task --list
+    silent: true
+
+  install:
+    desc: Install the flake
+    cmds:
+      - >
+        home-manager switch
+        --flake {{.HOME_MANAGER}}#${DEVSPACE}
+
+  update:
+    desc: Update the flake lock
+    cmds:
+      - >
+        nix flake update
+        --flake {{.HOME_MANAGER}}
+
+  upgrade:
+    desc: Update the flake lock and install the flake
+    cmds:
+      - task update
+      - task install
+
