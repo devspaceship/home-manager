@@ -23,6 +23,8 @@ return {
       "gopls",
       -- GraphQL
       "graphql-language-service-cli",
+      -- Hypr
+      "hyprls",
       -- HTML
       "html-lsp",
       -- JSON

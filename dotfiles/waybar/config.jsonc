@@ -13,14 +13,17 @@
   "modules-right": [
     "mpd",
     "idle_inhibitor",
-    "pulseaudio",
+    "bluetooth",
     "network",
     "cpu",
     "memory",
     "temperature",
     "hyprland/language",
+    "pulseaudio/slider",
+    "pulseaudio",
     "clock",
-    "tray"
+    "tray",
+    "privacy"
   ],
   "fixed-center": false,
   // Modules configuration
@@ -105,7 +108,7 @@
   },
   "temperature": {
     // "thermal-zone": 2,
-    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
     "critical-threshold": 80,
     // "format-critical": "{temperatureC}°C {icon}",
     "format": "{temperatureC}°C {icon}",
@@ -148,7 +151,8 @@
     "on-click": "pavucontrol"
   },
   "custom/nix": {
-    "format": ""
+    "format": "",
+    "tooltip": false,
   },
   "custom/media": {
     "format": "{icon} {text}",
