@@ -28,6 +28,7 @@
           inherit pkgs;
           modules = [
             ./common.nix
+            ./modules/languages.nix
             ./machines/${machine}.nix
           ]
           ++ platformModules;

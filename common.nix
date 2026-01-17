@@ -3,56 +3,32 @@ let
   inherit (import ./lib.nix { inherit config; }) configSymlink;
 in
 {
-  # TEMP: disable broken tests
-  nixpkgs.overlays = [
-    (final: prev: {
-      fish = prev.fish.overrideAttrs (old: {
-        doCheck = false;
-      });
-    })
-  ];
-  # TEMP
-
   nixpkgs.config.allowUnfree = true;
 
   home = {
     stateVersion = "24.11";
 
     packages = with pkgs; [
-      bash
       bat
       btop
       cmatrix
       fd
       fzf
-      gcc
       gh
       gimp2
       git
-      gnumake
       gnupg
-      go
-      gopls
       go-task
       kitty
       lazygit
-      luajitPackages.luarocks
-      mbake
       neofetch
       neovim
       nerd-fonts.fira-code
-      nil
-      nixfmt
       nmap
       oh-my-zsh
       opencode
-      python313
-      python313Packages.pip
       ripgrep
-      rustup
       starship
-      statix
-      stylua
       tmux
       tree
       tree-sitter
