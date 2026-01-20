@@ -1,6 +1,6 @@
 # https://taskfile.dev
 
-version: '3'
+version: "3"
 
 vars:
   HOME_MANAGER: ~/.config/home-manager
@@ -14,6 +14,7 @@ tasks:
   install:
     desc: Install the flake
     cmds:
+      - echo "DEVSPACE = ${DEVSPACE}"
       - >
         home-manager switch
         --flake {{.HOME_MANAGER}}#${DEVSPACE}
@@ -30,4 +31,3 @@ tasks:
     cmds:
       - task update
       - task install
-
