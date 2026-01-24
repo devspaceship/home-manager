@@ -1,4 +1,3 @@
-local util = require("conform.util")
 return {
   "stevearc/conform.nvim",
   opts = {
@@ -20,17 +19,13 @@ return {
           return { "shfmt" }
         end
       end,
-    },
-    formatters = {
-      trunk = {
-        command = util.from_node_modules("trunk"),
-        args = { "fmt", "$FILENAME" },
-        stdin = false,
-        -- require_cwd = true,
-        -- cwd = util.root_file({
-        --   ".trunk/trunk.yaml",
-        -- }),
-      },
+      ["*"] = function(_)
+        if os.getenv("DEVSPACE") == "work" then
+          return { "trunk" }
+        else
+          return {}
+        end
+      end,
     },
   },
 }
