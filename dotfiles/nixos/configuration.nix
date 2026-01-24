@@ -20,7 +20,6 @@
   };
 
   programs = {
-
     steam = {
       enable = true;
       remotePlay.openFirewall = true;
@@ -88,8 +87,8 @@
     firewall = {
       enable = true;
       allowedTCPPorts = [
-        22
-        5900
+        # 22
+        # 5900
       ];
       logRefusedPackets = true;
     };
@@ -112,6 +111,10 @@
   };
 
   security.rtkit.enable = true;
+  security.pam.services = {
+    login.u2fAuth = true;
+    sudo.u2fAuth = true;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;

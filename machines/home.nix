@@ -12,6 +12,7 @@ in
       pinentry-gnome3
       prismlauncher
       protonup-qt
+      yubikey-manager
     ];
 
     file = {
