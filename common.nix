@@ -46,6 +46,7 @@ in
       ".zprofile" = configSymlink "zsh/zprofile";
       ".zshrc" = configSymlink "zsh/zshrc";
       ".config/alacritty" = configSymlink "alacritty";
+      ".config/btop/btop.conf" = configSymlink "btop/btop.conf";
       ".config/kitty" = configSymlink "kitty";
       ".config/nix" = configSymlink "nix";
       ".config/nvim" = configSymlink "nvim";

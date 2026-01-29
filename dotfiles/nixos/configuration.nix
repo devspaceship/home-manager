@@ -33,9 +33,15 @@
     };
 
     nix-ld.enable = true;
-    seahorse.enable = true;
     wayvnc.enable = true;
     zsh.enable = true;
+
+    seahorse.enable = true;
+    _1password.enable = true;
+    _1password-gui = {
+      enable = true;
+      polkitPolicyOwners = [ "devspaceship" ];
+    };
   };
 
   fonts.packages = with pkgs; [
@@ -61,6 +67,20 @@
       wayland = true;
     };
 
+    avahi = {
+      enable = true;
+      nssmdns4 = true; # enables *.local resolution over IPv4 via NSS
+      nssmdns6 = true; # IPv6
+      openFirewall = true; # opens UDP 5353 in the firewall
+      publish = {
+        enable = true;
+        addresses = true;
+        workstation = true;
+      };
+    };
+
+    gnome.gnome-keyring.enable = true;
+
     printing.enable = true;
 
     pulseaudio.enable = false;
@@ -69,15 +89,7 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
-      # If you want to use JACK applications, uncomment this
-      #jack.enable = true;
-
-      # use the example session manager (no others are packaged yet so this is enabled by default,
-      # no need to redefine it in your config for now)
-      #media-session.enable = true;
     };
-
-    gnome.gnome-keyring.enable = true;
   };
 
   networking = {
