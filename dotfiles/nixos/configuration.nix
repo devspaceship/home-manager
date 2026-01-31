@@ -127,6 +127,7 @@
     login.u2fAuth = true;
     sudo.u2fAuth = true;
   };
+  security.pam.u2f.settings.cue = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
