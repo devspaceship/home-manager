@@ -1,8 +1,5 @@
-{ config, pkgs, ... }:
-{
-  imports = [
-    /etc/nixos/hardware-configuration.nix
-  ];
+{ config, pkgs, ... }: {
+  imports = [ /etc/nixos/hardware-configuration.nix ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -79,6 +76,15 @@
       };
     };
 
+    openssh = {
+      enable = true;
+      settings = {
+        PermitRootLogin = "no";
+        PasswordAuthentication = false;
+        KbdInteractiveAuthentication = false;
+      };
+    };
+
     gnome.gnome-keyring.enable = true;
 
     printing.enable = true;
@@ -93,7 +99,7 @@
   };
 
   networking = {
-    hostName = "nix-home";
+    hostName = "home";
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
     networkmanager.enable = true;
     firewall = {
@@ -123,26 +129,24 @@
   };
 
   security.rtkit.enable = true;
-  security.pam.services = {
-    login.u2fAuth = true;
-    sudo.u2fAuth = true;
+  security.pam = {
+    services = {
+      login.u2fAuth = true;
+      sudo.u2fAuth = true;
+    };
+    u2f.settings.cue = true;
   };
-  security.pam.u2f.settings.cue = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.devspaceship = {
     isNormalUser = true;
     description = "Thomas Saint-Gérand";
-    extraGroups = [
-      "input"
-      "networkmanager"
-      "wheel"
+    extraGroups = [ "input" "networkmanager" "wheel" ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIyG0chfBt6coIm3D6DlvvsaBer7Gan/65PgUlPdmu/f"
     ];
-    # packages = with pkgs; [
-    # ];
   };
   users.defaultUserShell = pkgs.zsh;
 
