@@ -4,42 +4,38 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  hardware = {
-    enableAllFirmware = true;
-    nvidia = {
-      nvidiaSettings = true;
-      modesetting.enable = true;
-      open = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
-    };
-    nvidia-container-toolkit.enable = true;
-    keyboard.zsa.enable = true;
-    bluetooth.enable = true;
+  hardware.enableAllFirmware = true;
+  hardware.nvidia = {
+    nvidiaSettings = true;
+    modesetting.enable = true;
+    open = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+  hardware.nvidia-container-toolkit.enable = true;
+  hardware.keyboard.zsa.enable = true;
+  hardware.bluetooth.enable = true;
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
   };
 
-  programs = {
-    steam = {
-      enable = true;
-      remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = true;
-    };
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+    xwayland.enable = true;
+  };
 
-    hyprland = {
-      enable = true;
-      withUWSM = true;
-      xwayland.enable = true;
-    };
+  programs.nix-ld.enable = true;
+  # wayvnc.enable = true;
+  programs.zsh.enable = true;
 
-    nix-ld.enable = true;
-    wayvnc.enable = true;
-    zsh.enable = true;
-
-    seahorse.enable = true;
-    _1password.enable = true;
-    _1password-gui = {
-      enable = true;
-      polkitPolicyOwners = [ "devspaceship" ];
-    };
+  programs.seahorse.enable = true;
+  programs._1password.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    polkitPolicyOwners = [ "devspaceship" ];
   };
 
   fonts.packages = with pkgs; [
@@ -49,53 +45,52 @@
     nerd-fonts.fira-code
   ];
 
-  services = {
-    xserver = {
-      videoDrivers = [ "nvidia" ];
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true; # enables *.local resolution over IPv4 via NSS
+    nssmdns6 = true; # IPv6
+    openFirewall = true; # opens UDP 5353 in the firewall
+    publish = {
       enable = true;
-      xkb = {
-        layout = "us";
-        variant = "";
-      };
+      addresses = true;
+      workstation = true;
     };
+  };
 
-    displayManager.gdm = {
-      banner = "@devspaceship";
-      enable = true;
-      wayland = true;
+  services.displayManager.gdm = {
+    banner = "@devspaceship";
+    enable = true;
+    wayland = true;
+  };
+
+  services.gnome.gnome-keyring.enable = true;
+  services.hypridle.enable = true;
+
+  services.openssh = {
+    enable = true;
+    settings = {
+      PermitRootLogin = "no";
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
     };
+  };
 
-    avahi = {
-      enable = true;
-      nssmdns4 = true; # enables *.local resolution over IPv4 via NSS
-      nssmdns6 = true; # IPv6
-      openFirewall = true; # opens UDP 5353 in the firewall
-      publish = {
-        enable = true;
-        addresses = true;
-        workstation = true;
-      };
-    };
+  services.printing.enable = true;
 
-    openssh = {
-      enable = true;
-      settings = {
-        PermitRootLogin = "no";
-        PasswordAuthentication = false;
-        KbdInteractiveAuthentication = false;
-      };
-    };
+  services.pulseaudio.enable = false;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
 
-    gnome.gnome-keyring.enable = true;
-
-    printing.enable = true;
-
-    pulseaudio.enable = false;
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
+  services.xserver = {
+    videoDrivers = [ "nvidia" ];
+    enable = true;
+    xkb = {
+      layout = "us";
+      variant = "";
     };
   };
 
