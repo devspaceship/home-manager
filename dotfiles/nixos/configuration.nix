@@ -12,6 +12,7 @@
       open = true;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
+    nvidia-container-toolkit.enable = true;
     keyboard.zsa.enable = true;
     bluetooth.enable = true;
   };
@@ -143,7 +144,7 @@
   users.users.devspaceship = {
     isNormalUser = true;
     description = "Thomas Saint-Gérand";
-    extraGroups = [ "input" "networkmanager" "wheel" ];
+    extraGroups = [ "input" "networkmanager" "podman" "wheel" ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIyG0chfBt6coIm3D6DlvvsaBer7Gan/65PgUlPdmu/f"
     ];
@@ -167,18 +168,19 @@
     xdg-desktop-portal-hyprland
   ];
 
+  virtualisation = {
+    containers.enable = true;
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      # Required for containers under podman compose to communicate
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

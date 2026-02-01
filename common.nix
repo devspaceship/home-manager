@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
-let
-  inherit (import ./lib.nix { inherit config; }) configSymlink;
-in
-{
+let inherit (import ./lib.nix { inherit config; }) configSymlink;
+in {
   nixpkgs.config.allowUnfree = true;
 
   home = {
@@ -19,7 +17,9 @@ in
       git
       gnupg
       go-task
+      just
       kitty
+      kubectl
       lazygit
       neofetch
       neovim
@@ -50,16 +50,15 @@ in
       ".config/kitty" = configSymlink "kitty";
       ".config/nix" = configSymlink "nix";
       ".config/nvim" = configSymlink "nvim";
-      ".config/opencode/opencode.jsonc" = configSymlink "opencode/opencode.jsonc";
+      ".config/opencode/opencode.jsonc" =
+        configSymlink "opencode/opencode.jsonc";
       ".config/lazygit/config.yml" = configSymlink "lazygit/config.yml";
       ".config/starship.toml" = configSymlink "starship/starship.toml";
       ".config/tmux/tmux.conf" = configSymlink "tmux/tmux.conf";
       ".config/tmux/tmux.conf.local" = configSymlink "tmux/tmux.conf.local";
     };
 
-    sessionVariables = {
-      EDITOR = "nvim";
-    };
+    sessionVariables = { EDITOR = "nvim"; };
   };
 
   programs.home-manager.enable = true;

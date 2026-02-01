@@ -1,15 +1,17 @@
 { config, pkgs, ... }:
-let
-  inherit (import ../lib.nix { inherit config; }) configSymlink;
-in
-{
+let inherit (import ../lib.nix { inherit config; }) configSymlink;
+in {
   home = {
     username = "devspaceship";
     homeDirectory = "/home/devspaceship";
 
     packages = with pkgs; [
+      brave
       google-chrome
+      minikube
       pinentry-gnome3
+      podman-desktop
+      podman-tui
       prismlauncher
       protonup-qt
       yubikey-manager
