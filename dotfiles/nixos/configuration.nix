@@ -129,13 +129,17 @@
     LC_TIME = "nl_NL.UTF-8";
   };
 
-  security.rtkit.enable = true;
-  security.pam = {
-    services = {
-      login.u2fAuth = true;
-      sudo.u2fAuth = true;
+  security = {
+    pam = {
+      services = {
+        login.u2fAuth = true;
+        sudo.u2fAuth = true;
+        polkit-1.u2fAuth = true;
+      };
+      u2f.settings.cue = true;
     };
-    u2f.settings.cue = true;
+    polkit.enable = true;
+    rtkit.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
