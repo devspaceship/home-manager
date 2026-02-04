@@ -45,17 +45,21 @@ alias dclf='docker compose logs -f'
 alias dce='docker compose exec'
 alias dcr='docker compose run'
 
+## Lazygit
+alias lg='lazygit'
+
 ## Nvim
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
 
+## OpenCode
+alias oc='opencode'
+
 ## Pnpm
 alias p='pnpm'
+alias pi='pnpm install'
 alias px='pnpx'
-
-## Git
-alias lg='lazygit'
 
 ## Terraform
 alias tf='terraform'

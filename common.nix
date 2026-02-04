@@ -18,6 +18,7 @@ in {
       gnupg
       go-task
       just
+      jq
       kitty
       kubectl
       lazygit
