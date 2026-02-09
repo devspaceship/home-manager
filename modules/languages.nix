@@ -22,8 +22,8 @@
       nixfmt
       statix
       # TypeScript
-      bun
-      nodejs_25
+      # bun
+      # nodejs_25
       # Python
       python313
       python313Packages.pip

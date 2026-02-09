@@ -6,6 +6,10 @@ in {
     homeDirectory = "/home/devspaceship";
 
     packages = with pkgs; [
+      # <tmp>
+      bun
+      nodejs_25
+      # </tmp>
       brave
       google-chrome
       minikube

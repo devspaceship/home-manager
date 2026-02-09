@@ -10,6 +10,7 @@ in {
       bat
       btop
       cmatrix
+      fastfetch
       fd
       fzf
       gh
@@ -22,7 +23,6 @@ in {
       kitty
       kubectl
       lazygit
-      neofetch
       neovim
       nerd-fonts.fira-code
       nmap
