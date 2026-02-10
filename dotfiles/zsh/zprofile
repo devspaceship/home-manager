@@ -38,3 +38,9 @@ path_append "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export PATH
 
 if_debug path_print '$PATH after zprofile'
+
+if [ -f "$HOME/.env" ]; then
+  set -a
+  source "$HOME/.env"
+  set +a
+fi

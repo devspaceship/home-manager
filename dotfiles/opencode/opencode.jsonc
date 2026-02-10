@@ -23,6 +23,7 @@
       "jq *": "allow",
       "ls *": "allow",
       "node *": "allow",
+      "npm test *": "allow",
       "pnpm *": "allow",
       "python3 *": "allow",
       "rg *": "allow",
