@@ -35,7 +35,6 @@
       "trunk *": "allow",
       "wc *": "allow",
       "which *": "allow",
-      "xargs *": "allow",
     },
     "read": {
       "*": "allow",
