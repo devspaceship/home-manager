@@ -137,9 +137,6 @@
     rtkit.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   users.users.devspaceship = {
     isNormalUser = true;
     description = "Thomas Saint-Gérand";
@@ -158,6 +155,7 @@
     hyprlauncher
     hyprlock
     hyprpaper
+    # hyprshutdown
     hyprsysteminfo
     inotify-tools
     nwg-look
