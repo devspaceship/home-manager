@@ -3,6 +3,10 @@
   "theme": "catppuccin",
   "default_agent": "plan",
   "autoupdate": true,
+  "enabled_providers": [
+    "github-copilot",
+    "opencode"
+  ],
   "permission": {
     "*": "ask",
     "bash": {
