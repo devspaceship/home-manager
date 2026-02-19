@@ -51,6 +51,8 @@ in {
       ".config/nvim" = configSymlink "nvim";
       ".config/opencode/opencode.jsonc" =
         configSymlink "opencode/opencode.jsonc";
+      ".config/opencode/agents" =
+        configSymlink "opencode/agents";
       ".config/lazygit/config.yml" = configSymlink "lazygit/config.yml";
       ".config/starship.toml" = configSymlink "starship/starship.toml";
       ".config/tmux/tmux.conf" = configSymlink "tmux/tmux.conf";
