@@ -6,7 +6,6 @@ in
   home.packages = with pkgs; [
     jankyborders
     sketchybar
-    pinentry_mac
   ];
 
   home.file = {
@@ -15,10 +14,5 @@ in
     ".config/nix-darwin" = configSymlink "nix-darwin";
     ".config/sketchybar/plugins" = configSymlink "sketchybar/plugins";
     ".config/sketchybar/sketchybarrc" = configSymlink "sketchybar/sketchybar.sh";
-  };
-
-  services.gpg-agent = {
-    pinentry.package = pkgs.pinentry_mac;
-    pinentry.program = "pinentry-mac";
   };
 }

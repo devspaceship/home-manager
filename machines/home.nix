@@ -6,12 +6,11 @@ in {
     homeDirectory = "/home/devspaceship";
 
     packages = with pkgs; [
-      # <tmp>
       bun
       nodejs_25
-      # </tmp>
       brave
       google-chrome
+      kitty
       minikube
       pinentry-gnome3
       podman-desktop

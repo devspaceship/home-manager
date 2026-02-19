@@ -5,10 +5,8 @@
     homeDirectory = "/Users/devspaceship";
 
     packages = with pkgs; [
-      # <tmp>
       bun
       nodejs_25
-      # </tmp>
     ];
   };
 }

@@ -20,13 +20,11 @@ in {
       go-task
       just
       jq
-      kitty
       kubectl
       lazygit
       neovim
       nerd-fonts.fira-code
       nmap
-      oh-my-zsh
       opencode
       ripgrep
       starship

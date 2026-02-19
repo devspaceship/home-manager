@@ -3,6 +3,12 @@
 
 if_debug path_print '$PATH before zprofile'
 
+# Homebrew
+if [ -x "$(command -v brew)" ]; then
+  eval "$(brew shellenv)"
+fi
+# End Homebrew
+
 # Nix
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
