@@ -1,6 +1,7 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "catppuccin",
+  // "theme": "catppuccin",
+  "theme": "system",
   "default_agent": "plan",
   "autoupdate": true,
   "enabled_providers": [
@@ -21,6 +22,7 @@
       "git config --list *": "allow",
       "git diff *": "allow",
       "git log *": "allow",
+      "git show *": "allow",
       "git status *": "allow",
       "grep *": "allow",
       "head *": "allow",
@@ -58,6 +60,6 @@
     "todowrite": "allow",
     "webfetch": "allow",
     "websearch": "allow",
-    "codesearch": "allow",
+    "question": "allow",
   },
 }

@@ -28,6 +28,9 @@ export NVM_DIR="$HOME/.nvm"
 export CC=/usr/bin/clang
 export CXX=/usr/bin/clang++
 
+export OPENCODE_EXPERIMENTAL_LSP_TOOL=true
+export OPENCODE_ENABLE_EXA=true
+
 if [ -f "$HOME/.config/home-manager/.env" ]; then
   set -a
   source "$HOME/.config/home-manager/.env"

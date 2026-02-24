@@ -1,7 +1,6 @@
 return {
   -- AI
   { import = "lazyvim.plugins.extras.ai.copilot" },
-  { import = "lazyvim.plugins.extras.ai.sidekick" },
   -- Formatting
   { import = "lazyvim.plugins.extras.formatting.biome" },
   { import = "lazyvim.plugins.extras.formatting.black" },
@@ -26,4 +25,5 @@ return {
   { import = "lazyvim.plugins.extras.lang.tex" },
   { import = "lazyvim.plugins.extras.lang.toml" },
   { import = "lazyvim.plugins.extras.lang.typescript" },
+  { import = "lazyvim.plugins.extras.lang.yaml" },
 }
