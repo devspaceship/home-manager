@@ -1,7 +1,5 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  // "theme": "catppuccin",
-  "theme": "system",
   "default_agent": "plan",
   "autoupdate": true,
   "enabled_providers": [
@@ -12,6 +10,10 @@
     "*": "ask",
     "bash": {
       "*": "ask",
+      "cargo add *": "allow",
+      "cargo build *": "allow",
+      "cargo init *": "allow",
+      "cargo run *": "allow",
       "cat *": "allow",
       "cp *": "allow",
       "curl *": "allow",
