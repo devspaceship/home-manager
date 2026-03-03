@@ -31,6 +31,9 @@ export CXX=/usr/bin/clang++
 export OPENCODE_EXPERIMENTAL_LSP_TOOL=true
 export OPENCODE_ENABLE_EXA=true
 
+# Apple Silicon Rust fix
+export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix)/lib:$(brew --prefix)/opt/libiconv/lib
+
 if [ -f "$HOME/.config/home-manager/.env" ]; then
   set -a
   source "$HOME/.config/home-manager/.env"

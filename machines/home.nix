@@ -18,6 +18,7 @@ in {
       polkit_gnome
       prismlauncher
       protonup-qt
+      rustup
       yubikey-manager
     ];
 

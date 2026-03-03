@@ -28,7 +28,7 @@
       python313
       python313Packages.pip
       # Rust
-      rustup
+      # rustup
     ];
   };
 }
