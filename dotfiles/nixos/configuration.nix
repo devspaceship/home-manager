@@ -28,7 +28,6 @@
   };
 
   programs.nix-ld.enable = true;
-  # wayvnc.enable = true;
   programs.zsh.enable = true;
 
   programs.seahorse.enable = true;
@@ -93,6 +92,12 @@
       variant = "";
     };
   };
+
+  services.ollama = {
+    enable = true;
+    package = pkgs.ollama-cuda;
+  };
+  # services.open-webui.enable = true;
 
   networking = {
     hostName = "home";

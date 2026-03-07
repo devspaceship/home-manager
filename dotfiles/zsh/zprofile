@@ -42,6 +42,7 @@ fi
 
 path_prepend "/opt/homebrew/opt/openjdk/bin"
 path_prepend "$PNPM_HOME"
+path_prepend "/usr/bin"
 path_append "$HOME/go/bin"
 path_append "$HOME/bin/flutter/bin"
 path_append "$HOME/Node/bin"
