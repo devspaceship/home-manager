@@ -28,12 +28,14 @@ in {
       nmap
       opencode
       ripgrep
+      skim
       starship
       tmux
       tree
       tree-sitter
       unzip
       wget
+      xz
       yazi
       zathura
       zellij
@@ -58,6 +60,7 @@ in {
       ".config/starship.toml" = configSymlink "starship/starship.toml";
       ".config/tmux/tmux.conf" = configSymlink "tmux/tmux.conf";
       ".config/tmux/tmux.conf.local" = configSymlink "tmux/tmux.conf.local";
+      ".config/zellij" = configSymlink "zellij";
     };
 
     sessionVariables = { EDITOR = "nvim"; };

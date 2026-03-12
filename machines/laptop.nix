@@ -6,7 +6,8 @@
 
     packages = with pkgs; [
       bun
-      nodejs_25
+      # nodejs_25
+      kanata
     ];
   };
 }
