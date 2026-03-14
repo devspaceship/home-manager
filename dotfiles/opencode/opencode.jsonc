@@ -60,6 +60,7 @@
 		"todowrite": "allow",
 		"webfetch": "allow",
 		"websearch": "allow",
-		"question": "allow"
+		"question": "allow",
+		"codesearch": "allow"
 	}
 }
