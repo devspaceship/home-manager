@@ -26,6 +26,7 @@ return {
           return { "shfmt" }
         end
       end,
+      zsh = { "beautysh" },
       ["*"] = function(_)
         if os.getenv("DEVSPACE") == "work" then
           return { "trunk" }

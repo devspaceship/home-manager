@@ -3,15 +3,10 @@
 
 if_debug path_print '$PATH before zprofile'
 
-# Homebrew
-if [ -x "$(command -v brew)" ]; then
-  eval "$(brew shellenv)"
-fi
-# End Homebrew
 
 # Nix
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+    . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 fi
 # End Nix
 
@@ -26,22 +21,19 @@ export ZSH="$HOME/.oh-my-zsh"
 export GPG_TTY=$(tty)
 export PNPM_HOME="$HOME/Library/pnpm"
 export NVM_DIR="$HOME/.nvm"
-export CC=/usr/bin/clang
-export CXX=/usr/bin/clang++
+# export CC=/usr/bin/clang
+# export CXX=/usr/bin/clang++
 
 export OPENCODE_EXPERIMENTAL_LSP_TOOL=true
 export OPENCODE_ENABLE_EXA=true
 
-# Apple Silicon Rust fix
-export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix)/lib:$(brew --prefix)/opt/libiconv/lib
 
 if [ -f "$HOME/.config/home-manager/.env" ]; then
-  set -a
-  source "$HOME/.config/home-manager/.env"
-  set +a
+    set -a
+    source "$HOME/.config/home-manager/.env"
+    set +a
 fi
 
-path_prepend "/opt/homebrew/opt/openjdk/bin"
 path_prepend "$PNPM_HOME"
 path_prepend "/usr/bin"
 path_append "$HOME/.cargo/bin"
@@ -52,12 +44,23 @@ path_append "$HOME/bin/flutter/bin"
 path_append "$HOME/Node/bin"
 path_append "$HOME/Library/Android/sdk/platform-tools"
 path_append "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# Homebrew
+if [ -x "$(command -v brew)" ]; then
+    eval "$(brew shellenv)"
+    path_prepend "/opt/homebrew/opt/openjdk/bin"
+
+    # Apple Silicon Rust fix
+    export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix)/lib:$(brew --prefix)/opt/libiconv/lib
+fi
+# End Homebrew
+
 export PATH
 
 if_debug path_print '$PATH after zprofile'
 
 if [ -f "$HOME/.env" ]; then
-  set -a
-  source "$HOME/.env"
-  set +a
+    set -a
+    source "$HOME/.env"
+    set +a
 fi
