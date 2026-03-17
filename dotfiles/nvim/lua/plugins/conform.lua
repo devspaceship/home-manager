@@ -1,13 +1,21 @@
 return {
   "stevearc/conform.nvim",
-  opts = {
-    default_format_opts = {
-      timeout_ms = 6000,
-      async = false,
-      quiet = false,
-      lsp_format = "fallback",
-    },
-    formatters_by_ft = {
+  opts = function()
+    local biome_fts = {
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "json",
+      "jsonc",
+      "graphql",
+      "css",
+      "astro",
+      "svelte",
+      "vue",
+    }
+
+    local formatters_by_ft = {
       go = { "goimports", "gofmt" },
       lua = { "stylua" },
       kdl = { "kdlfmt" },
@@ -34,6 +42,20 @@ return {
           return {}
         end
       end,
-    },
-  },
+    }
+
+    for _, ft in ipairs(biome_fts) do
+      formatters_by_ft[ft] = { "biome" }
+    end
+
+    return {
+      default_format_opts = {
+        -- timeout_ms = 6000,
+        async = false,
+        quiet = false,
+        lsp_format = "fallback",
+      },
+      formatters_by_ft = formatters_by_ft,
+    }
+  end,
 }
