@@ -45,7 +45,7 @@ return {
     }
 
     for _, ft in ipairs(biome_fts) do
-      formatters_by_ft[ft] = { "biome" }
+      formatters_by_ft[ft] = { "biome", stop_after_first = true }
     end
 
     return {
