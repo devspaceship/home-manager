@@ -29,7 +29,7 @@ return {
       end,
       sh = function(_)
         if os.getenv("DEVSPACE") == "work" then
-          return { "trunk" }
+          return { "shfmt", "trunk" }
         else
           return { "shfmt" }
         end
