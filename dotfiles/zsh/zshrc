@@ -85,6 +85,7 @@ eval "$(task --completion zsh)"
 path_prepend "$HOME/.swiftly/bin"
 path_prepend "$HOME/.cargo/bin"
 path_prepend "$HOME/.nix-profile/bin"
+path_prepend "$HOME/.local/bin"
 path_prepend "$HOME/bin"
 export PATH
 
@@ -93,10 +94,7 @@ if_debug path_print '$PATH after zshrc'
 # pnpm
 export PNPM_HOME="/Users/thomas/Library/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+    *":$PNPM_HOME:"*) ;;
+    *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
-# opencode
-export PATH=/Users/devspaceship/.opencode/bin:$PATH

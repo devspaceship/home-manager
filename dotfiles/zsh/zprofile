@@ -36,7 +36,6 @@ fi
 
 path_prepend "$PNPM_HOME"
 path_prepend "/usr/bin"
-path_append "$HOME/.cargo/bin"
 path_append "$HOME/.local/bin"
 path_append "$HOME/.local/share/nvim/mason/bin"
 path_append "$HOME/go/bin"

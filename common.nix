@@ -52,6 +52,7 @@ in {
       ".config/kitty" = configSymlink "kitty";
       ".config/nix" = configSymlink "nix";
       ".config/nvim" = configSymlink "nvim";
+      ".claude/settings.json" = configSymlink "claude/settings.json";
       ".config/opencode/agents" = configSymlink "opencode/agents";
       ".config/opencode/opencode.jsonc" =
         configSymlink "opencode/opencode.jsonc";
