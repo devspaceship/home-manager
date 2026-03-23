@@ -7,6 +7,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs =
@@ -14,10 +15,16 @@
       nixpkgs,
       home-manager,
       ...
-    }:
+    }@inputs:
     let
+      overlays = [
+        inputs.neovim-nightly-overlay.overlays.default
+      ];
       mkHomeConfiguration =
-        { system, machine }:
+        {
+          system,
+          machine,
+        }:
         let
           pkgs = import nixpkgs {
             inherit system;
@@ -27,6 +34,9 @@
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
+            {
+              nixpkgs.overlays = overlays;
+            }
             ./common.nix
             ./modules/languages.nix
             ./machines/${machine}.nix

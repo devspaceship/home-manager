@@ -18,6 +18,7 @@ return {
     local formatters_by_ft = {
       go = { "goimports", "gofmt" },
       lua = { "stylua" },
+      nix = { "nixfmt" },
       kdl = { "kdlfmt" },
       rust = { "rustfmt" },
       python = function(bufnr)

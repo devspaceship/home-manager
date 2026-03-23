@@ -3,11 +3,16 @@
 -- Add any additional options here
 vim.opt.completeopt:append("popup")
 
+-- AI
+-- Native inline completions don't support being shown as regular completions
+vim.g.ai_cmp = false
+
 -- LSP
-vim.lsp.config("sourcekit", {})
+-- vim.lsp.config("sourcekit", {})
 vim.lsp.enable("sourcekit")
-vim.lsp.config("racket-langserver", {})
+-- vim.lsp.config("racket-langserver", {})
 vim.lsp.enable("racket_langserver")
+vim.lsp.enable("nil_ls")
 
 -- VimTex
 vim.g.vimtex_view_method = "zathura"

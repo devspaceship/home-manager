@@ -1,4 +1,6 @@
 return {
+  -- AI
+  { import = "lazyvim.plugins.extras.ai.copilot-native" },
   -- Formatting
   { import = "lazyvim.plugins.extras.formatting.biome" },
   { import = "lazyvim.plugins.extras.formatting.black" },
