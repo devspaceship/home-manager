@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
-let inherit (import ./lib.nix { inherit config; }) configSymlink;
-in {
+let
+  inherit (import ./lib.nix { inherit config; }) configSymlink;
+in
+{
   nixpkgs.config.allowUnfree = true;
 
   home = {
@@ -30,6 +32,7 @@ in {
       ripgrep
       skim
       starship
+      tldr
       tmux
       tree
       tree-sitter
@@ -54,8 +57,7 @@ in {
       ".config/nvim" = configSymlink "nvim";
       ".claude/settings.json" = configSymlink "claude/settings.json";
       ".config/opencode/agents" = configSymlink "opencode/agents";
-      ".config/opencode/opencode.jsonc" =
-        configSymlink "opencode/opencode.jsonc";
+      ".config/opencode/opencode.jsonc" = configSymlink "opencode/opencode.jsonc";
       ".config/opencode/tui.jsonc" = configSymlink "opencode/tui.jsonc";
       ".config/lazygit/config.yml" = configSymlink "lazygit/config.yml";
       ".config/starship.toml" = configSymlink "starship/starship.toml";
@@ -64,7 +66,9 @@ in {
       ".config/zellij" = configSymlink "zellij";
     };
 
-    sessionVariables = { EDITOR = "nvim"; };
+    sessionVariables = {
+      EDITOR = "nvim";
+    };
   };
 
   programs.home-manager.enable = true;
