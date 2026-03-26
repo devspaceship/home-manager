@@ -1,12 +1,4 @@
 {
-	"extraKnownMarketplaces": {
-		"claude-plugins-official": {
-			"source": {
-				"source": "github",
-				"repo": "anthropics/claude-plugins-official"
-			}
-		}
-	},
 	"permissions": {
 		"allow": [
 			"Bash(cargo add *)",
@@ -47,5 +39,17 @@
 			"Edit(**/.env)",
 			"Edit(**/.env.*)"
 		]
+	},
+	"extraKnownMarketplaces": {
+		"claude-plugins-official": {
+			"source": {
+				"source": "github",
+				"repo": "anthropics/claude-plugins-official"
+			}
+		}
+	},
+	"effortLevel": "high",
+	"enabledPlugins": {
+		"rust-analyzer-lsp@claude-plugins-official": true
 	}
 }
