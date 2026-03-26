@@ -19,7 +19,6 @@ return {
       go = { "goimports", "gofmt" },
       lua = { "stylua" },
       nix = { "nixfmt" },
-      kdl = { "kdlfmt" },
       rust = { "rustfmt" },
       python = function(bufnr)
         if require("conform").get_formatter_info("ruff_format", bufnr).available then
