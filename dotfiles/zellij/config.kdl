@@ -1,6 +1,6 @@
 pane_frames false
 theme "catppuccin-mocha"
-default_layout "default" // "compact" after learning keybinds
+default_layout "compact" // "compact" after learning keybinds
 default_mode "locked"
 show_startup_tips false
 
@@ -35,6 +35,13 @@ keybinds clear-defaults=true {
         bind "Ctrl l" { MoveTab "Right"; }
 
         bind "d" { Detach; }
+        bind "s" {
+            LaunchOrFocusPlugin "session-manager" {
+                floating true
+                move_to_focused_tab true
+            };
+            SwitchToMode "Locked"
+        }
     }
     normal {
         // ASCII code for Ctrl a is 1
@@ -42,7 +49,6 @@ keybinds clear-defaults=true {
 
         bind "p" { SwitchToMode "Pane"; }
         bind "t" { SwitchToMode "Tab"; }
-        bind "s" { SwitchToMode "Session"; }
         bind "r" { SwitchToMode "Resize"; }
         bind "o" { SwitchToMode "Scroll"; }
     }
@@ -98,22 +104,6 @@ keybinds clear-defaults=true {
     entersearch {
         bind "Esc" { SwitchToMode "Scroll"; }
         bind "Enter" { SwitchToMode "Search"; }
-    }
-    session {
-        bind "m" {
-            LaunchOrFocusPlugin "session-manager" {
-                floating true
-                move_to_focused_tab true
-            };
-            SwitchToMode "Locked"
-        }
-        bind "p" {
-            LaunchOrFocusPlugin "plugin-manager" {
-                floating true
-                move_to_focused_tab true
-            };
-            SwitchToMode "Locked"
-        }
     }
 }
 

@@ -40,6 +40,13 @@
 			"Edit(**/.env.*)"
 		]
 	},
+	"enabledPlugins": {
+		"rust-analyzer-lsp@claude-plugins-official": true,
+		"typescript-lsp@claude-plugins-official": true,
+		"code-review@claude-plugins-official": true,
+		"context7@claude-plugins-official": true,
+		"frontend-design@claude-plugins-official": true
+	},
 	"extraKnownMarketplaces": {
 		"claude-plugins-official": {
 			"source": {
@@ -48,8 +55,5 @@
 			}
 		}
 	},
-	"effortLevel": "high",
-	"enabledPlugins": {
-		"rust-analyzer-lsp@claude-plugins-official": true
-	}
+	"effortLevel": "high"
 }
