@@ -7,6 +7,12 @@ vim.opt.completeopt:append("popup")
 -- Native inline completions don't support being shown as regular completions
 vim.g.ai_cmp = false
 
+-- Tabs
+vim.opt.expandtab = false
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 0
+vim.opt.shiftround = true
+
 -- LSP
 -- vim.lsp.config("sourcekit", {})
 vim.lsp.enable("sourcekit")
