@@ -80,6 +80,12 @@
 		"webfetch": "allow",
 		"websearch": "allow",
 		"question": "allow",
-		"codesearch": "allow"
+		"codesearch": "allow",
+		"external_directory": {
+			"*": "ask",
+			"~/code": "allow",
+			"~/.config/home-manager": "allow",
+			"~/.local/share/nvim": "allow"
+		}
 	}
 }

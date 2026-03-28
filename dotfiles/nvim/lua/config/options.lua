@@ -10,19 +10,16 @@ vim.g.ai_cmp = false
 -- Tabs
 vim.opt.expandtab = false
 vim.opt.tabstop = 4
-vim.opt.shiftwidth = 0
+vim.opt.shiftwidth = 0 -- Aligns it with tabstop
 vim.opt.shiftround = true
 
 -- LSP
--- vim.lsp.config("sourcekit", {})
 vim.lsp.enable("sourcekit")
--- vim.lsp.config("racket-langserver", {})
 vim.lsp.enable("racket_langserver")
 vim.lsp.enable("nil_ls")
 
 -- VimTex
 vim.g.vimtex_view_method = "zathura"
--- vim.g.vimtex_compiler_latexmk.aux_dir = "./.aux"
 vim.g.vimtex_compiler_latexmk = {
   aux_dir = "./.aux",
 }
