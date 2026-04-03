@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
-let inherit (import ../lib.nix { inherit config; }) configSymlink;
-in {
+let
+  inherit (import ../lib.nix { inherit config; }) configSymlink;
+in
+{
   home = {
     username = "devspaceship";
     homeDirectory = "/home/devspaceship";
@@ -31,22 +33,18 @@ in {
     };
   };
 
-  services.gpg-agent = {
-    pinentry.package = pkgs.pinentry-gnome3;
-    pinentry.program = "pinentry-gnome3";
-  };
-
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
     Unit = {
       Description = "polkit-gnome-authentication-agent-1";
       Wants = [ "graphical-session.target" ];
       After = [ "graphical-session.target" ];
     };
-    Install = { WantedBy = [ "graphical-session.target" ]; };
+    Install = {
+      WantedBy = [ "graphical-session.target" ];
+    };
     Service = {
       Type = "simple";
-      ExecStart =
-        "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
       Restart = "on-failure";
       RestartSec = 1;
       TimeoutStopSec = 10;
