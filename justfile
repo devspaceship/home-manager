@@ -6,11 +6,12 @@ default:
 
 [private]
 update:
-    nix flake update --flake {{ home_manager }}
+    nix flake update --flake {{ home_manager }} \
+    	--extra-experimental-features 'nix-command flakes'
 
 [private]
 install-nixos:
-    sudo nixos-rebuild switch --flake {{ home_manager }}#home
+    sudo nixos-rebuild switch --flake {{ home_manager }}#home --impure
 
 [private]
 install-home-manager:

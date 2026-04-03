@@ -48,6 +48,13 @@
         };
     in
     {
+      nixosConfigurations = {
+        home = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ ./dotfiles/nixos/configuration.nix ];
+        };
+      };
+
       homeConfigurations = {
         home = mkHomeConfiguration {
           system = "x86_64-linux";

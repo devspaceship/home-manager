@@ -53,7 +53,6 @@ in
       ".config/alacritty" = configSymlink "alacritty";
       ".config/btop/btop.conf" = configSymlink "btop/btop.conf";
       ".config/kitty" = configSymlink "kitty";
-      ".config/nix" = configSymlink "nix";
       ".config/nvim" = configSymlink "nvim";
       ".claude/settings.json" = configSymlink "claude/settings.json";
       ".config/opencode/agents" = configSymlink "opencode/agents";
@@ -70,6 +69,12 @@ in
       EDITOR = "nvim";
     };
   };
+
+  nix.package = pkgs.nix;
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   programs.home-manager.enable = true;
 
