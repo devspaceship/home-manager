@@ -1,22 +1,34 @@
 home_manager := "~/.config/home-manager"
 
-# List available recipes
+[private]
 default:
     @just --list
 
-# Install the flake
-install:
-    echo "DEVSPACE = ${DEVSPACE}"
-    home-manager switch --flake {{home_manager}}#${DEVSPACE}
-
-# Update the flake lock
+[private]
 update:
-    nix flake update --flake {{home_manager}}
+    nix flake update --flake {{ home_manager }}
 
-# Update the flake lock and install the flake
-upgrade: update install
+[private]
+install-nixos:
+    sudo nixos-rebuild switch --flake {{ home_manager }}#home
 
-# Update the system channel and rebuild
-upgrade-system:
-    sudo nix-channel --update
-    sudo nixos-rebuild switch
+[private]
+install-home-manager:
+    echo "DEVSPACE = ${DEVSPACE}"
+    home-manager switch --flake {{ home_manager }}#${DEVSPACE}
+
+# Update flake lock and upgrade home-manager
+[macos]
+upgrade: update install-home-manager
+
+# Update flake lock and upgrade nixos and home-manager
+[linux]
+upgrade: update install-nixos install-home-manager
+
+# Update flake lock and upgrade nixos
+[linux]
+upgrade-nixos: update install-nixos
+
+# Update flake lock and upgrade home-manager
+[linux]
+upgrade-home-manager: update install-home-manager
