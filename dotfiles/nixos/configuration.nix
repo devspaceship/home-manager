@@ -57,12 +57,10 @@
     };
   };
 
-  services.displayManager.gdm = {
-    banner = "@devspaceship";
+  services.displayManager.sddm = {
     enable = true;
-    wayland = true;
+    wayland.enable = true;
   };
-  services.displayManager.defaultSession = "hyprland-uwsm";
 
   services.gnome.gnome-keyring.enable = true;
   services.hypridle.enable = true;
@@ -177,8 +175,10 @@
     xdg-desktop-portal-hyprland
   ];
 
+  # --- Virtualisation ---
   virtualisation = {
     containers.enable = true;
+    libvirtd.enable = true;
     podman = {
       enable = true;
       dockerCompat = true;
@@ -186,6 +186,7 @@
       defaultNetwork.settings.dns_enabled = true;
     };
   };
+  programs.virt-manager.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
