@@ -31,3 +31,9 @@ tasks:
     cmds:
       - task update
       - task install
+
+  upgrade-system:
+    desc: Update the system channel and rebuild
+    cmds:
+      - sudo nix-channel --update
+      - sudo nixos-rebuild switch

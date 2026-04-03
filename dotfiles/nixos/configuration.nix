@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   imports = [ /etc/nixos/hardware-configuration.nix ];
 
   boot.loader.systemd-boot.enable = true;
@@ -61,6 +62,7 @@
     enable = true;
     wayland = true;
   };
+  services.displayManager.defaultSession = "hyprland-uwsm";
 
   services.gnome.gnome-keyring.enable = true;
   services.hypridle.enable = true;
@@ -145,7 +147,12 @@
   users.users.devspaceship = {
     isNormalUser = true;
     description = "Thomas Saint-Gérand";
-    extraGroups = [ "input" "networkmanager" "podman" "wheel" ];
+    extraGroups = [
+      "input"
+      "networkmanager"
+      "podman"
+      "wheel"
+    ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIyG0chfBt6coIm3D6DlvvsaBer7Gan/65PgUlPdmu/f"
     ];
@@ -155,7 +162,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    blueberry
+    blueman
     dunst
     hyprlauncher
     hyprlock
