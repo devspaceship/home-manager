@@ -57,9 +57,8 @@
     };
   };
 
-  services.displayManager.sddm = {
+  programs.regreet = {
     enable = true;
-    wayland.enable = true;
   };
 
   services.gnome.gnome-keyring.enable = true;
