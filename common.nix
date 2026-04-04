@@ -14,12 +14,12 @@ in
       cmatrix
       fastfetch
       fd
+      file
       fzf
       gh
       gimp2
       git
-      gnupg
-      go-task
+      hex
       just
       jq
       kubectl
@@ -43,7 +43,6 @@ in
       zathura
       zellij
       zsh
-
       # Nushell
       carapace
       fnm
