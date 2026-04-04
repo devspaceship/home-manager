@@ -1,6 +1,6 @@
 pane_frames false
 theme "catppuccin-mocha"
-default_layout "compact" // "compact" after learning keybinds
+default_layout "compact"
 default_mode "locked"
 show_startup_tips false
 

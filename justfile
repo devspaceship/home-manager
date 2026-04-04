@@ -16,7 +16,8 @@ install-nixos:
 [private]
 install-home-manager:
     echo "DEVSPACE = ${DEVSPACE}"
-    home-manager switch --flake {{ home_manager }}#${DEVSPACE}
+    home-manager switch --flake {{ home_manager }}#${DEVSPACE} \
+    	--extra-experimental-features 'nix-command flakes'
 
 # Update flake lock and upgrade home-manager
 [macos]
