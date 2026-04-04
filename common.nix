@@ -43,6 +43,11 @@ in
       zathura
       zellij
       zsh
+
+      # Nushell
+      carapace
+      fnm
+      nushell
     ];
 
     file = {
@@ -50,7 +55,8 @@ in
       ".zsh_helpers" = configSymlink "zsh/zsh_helpers";
       ".zprofile" = configSymlink "zsh/zprofile";
       ".zshrc" = configSymlink "zsh/zshrc";
-      ".config/alacritty" = configSymlink "alacritty";
+      ".config/nushell/config.nu" = configSymlink "nushell/config.nu";
+      ".config/nushell/env.nu" = configSymlink "nushell/env.nu";
       ".config/btop/btop.conf" = configSymlink "btop/btop.conf";
       ".config/kitty" = configSymlink "kitty";
       ".config/nvim" = configSymlink "nvim";
@@ -82,5 +88,6 @@ in
     enable = true;
     enableSshSupport = true;
     enableZshIntegration = true;
+    enableNushellIntegration = true;
   };
 }
