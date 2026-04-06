@@ -1,8 +1,9 @@
 return {
   -- AI
   { import = "lazyvim.plugins.extras.ai.copilot-native" },
+  -- DAP
+  { import = "lazyvim.plugins.extras.dap.core" },
   -- Formatting
-  { import = "lazyvim.plugins.extras.formatting.biome" },
   { import = "lazyvim.plugins.extras.formatting.black" },
   -- Test
   { import = "lazyvim.plugins.extras.test.core" },
@@ -24,6 +25,7 @@ return {
   { import = "lazyvim.plugins.extras.lang.terraform" },
   { import = "lazyvim.plugins.extras.lang.tex" },
   { import = "lazyvim.plugins.extras.lang.toml" },
-  { import = "lazyvim.plugins.extras.lang.typescript" },
+  { import = "lazyvim.plugins.extras.lang.typescript.biome" },
+  { import = "lazyvim.plugins.extras.lang.typescript.vtsls" },
   { import = "lazyvim.plugins.extras.lang.yaml" },
 }
