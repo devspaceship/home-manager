@@ -13,6 +13,7 @@ in
       brave
       google-chrome
       kitty
+      lldb_22
       minikube
       pinentry-gnome3
       podman-desktop
