@@ -11,6 +11,8 @@
       # Go
       go
       gopls
+      # Java
+      jdk
       # Lua
       luajitPackages.luarocks
       stylua
