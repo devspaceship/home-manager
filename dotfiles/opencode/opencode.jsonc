@@ -26,6 +26,12 @@
 			}
 		}
 	},
+	"mcp": {
+		"linear": {
+			"type": "remote",
+			"url": "https://mcp.linear.app/mcp"
+		}
+	},
 	"permission": {
 		"*": "ask",
 		"bash": {
@@ -40,6 +46,7 @@
 			"echo *": "allow",
 			"file *": "allow",
 			"find *": "allow",
+			"gh pr status *": "allow",
 			"git branch *": "allow",
 			"git config --list *": "allow",
 			"git diff *": "allow",
@@ -86,6 +93,9 @@
 			"~/code": "allow",
 			"~/.config/home-manager": "allow",
 			"~/.local/share/nvim": "allow"
-		}
+		},
+		// Linear MCP
+		"linear_get_issue": "allow",
+		"linear_list_comments": "allow"
 	}
 }
