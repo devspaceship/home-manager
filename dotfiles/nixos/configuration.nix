@@ -12,7 +12,7 @@
     open = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
-  hardware.nvidia-container-toolkit.enable = true;
+  # hardware.nvidia-container-toolkit.enable = true;
   hardware.keyboard.zsa.enable = true;
   hardware.bluetooth.enable = true;
 
@@ -138,6 +138,7 @@
   security = {
     pam = {
       services = {
+        hyprlock.u2fAuth = true;
         login.u2fAuth = true;
         polkit-1.u2fAuth = true;
         sudo.u2fAuth = true;
