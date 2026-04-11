@@ -144,6 +144,7 @@
         sudo.u2fAuth = true;
       };
       u2f.settings.cue = true;
+
     };
     polkit.enable = true;
     rtkit.enable = true;
@@ -201,6 +202,14 @@
       RestartSec = 1;
       TimeoutStopSec = 10;
     };
+  };
+
+  # YubiKey access by polkit
+  systemd.services."polkit-agent-helper@".serviceConfig = {
+    PrivateDevices = false;
+    DevicePolicy = "closed";
+    DeviceAllow = [ "char-hidraw rw" ];
+    ProtectHome = false;
   };
 
   # --- Virtualisation ---
