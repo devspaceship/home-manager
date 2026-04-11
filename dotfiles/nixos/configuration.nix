@@ -81,9 +81,22 @@
   services.xserver = {
     videoDrivers = [ "nvidia" ];
     enable = true;
+    # displayManager.lightdm.enable = false;
     xkb = {
       layout = "us";
       variant = "";
+    };
+  };
+
+  services.displayManager.enable = true;
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session.command = "uwsm start hyprland-uwsm.desktop";
+      initial_session = {
+        command = "uwsm start hyprland-uwsm.desktop";
+        user = "devspaceship";
+      };
     };
   };
 
@@ -120,6 +133,8 @@
     LC_TIME = "nl_NL.UTF-8";
   };
 
+  services.udev.packages = with pkgs; [ yubikey-personalization ];
+
   security = {
     pam = {
       services = {
@@ -138,6 +153,7 @@
     description = "Thomas Saint-Gérand";
     extraGroups = [
       "input"
+      "libvirtd"
       "networkmanager"
       "podman"
       "wheel"
@@ -189,7 +205,10 @@
   # --- Virtualisation ---
   virtualisation = {
     containers.enable = true;
-    libvirtd.enable = true;
+    libvirtd = {
+      enable = true;
+      # qemu.swtpm.enable = true; # software TPM emulation, for TPM-based LUKS testing
+    };
     podman = {
       enable = true;
       dockerCompat = true;

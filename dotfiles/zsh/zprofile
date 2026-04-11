@@ -11,7 +11,6 @@ fi
 # End Nix
 
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
-export JAVA_HOME="$(/usr/libexec/java_home)"
 
 export LANG=en_US.UTF-8
 export EDITOR="nvim"
@@ -32,6 +31,10 @@ if [ -f "$HOME/.config/home-manager/.env" ]; then
     set -a
     source "$HOME/.config/home-manager/.env"
     set +a
+fi
+
+if [ $DEVSPACE = "work" ]; then
+    export JAVA_HOME="$(/usr/libexec/java_home)"
 fi
 
 path_prepend "$PNPM_HOME"
