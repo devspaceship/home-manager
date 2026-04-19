@@ -39,6 +39,7 @@
   environment.systemPackages = with pkgs; [
     blueman
     dunst
+    grim
     hyprlauncher
     hyprlock
     hyprpaper
@@ -46,10 +47,13 @@
     hyprsysteminfo
     inotify-tools
     nwg-look
+    playerctl
     polkit_gnome
     rofi
+    slurp
     waybar
     wev
+    wl-clipboard
     xdg-desktop-portal-hyprland
   ];
 
