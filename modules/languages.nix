@@ -12,7 +12,7 @@
       go
       gopls
       # Java
-      jdk
+      # jdk
       # Lua
       luajitPackages.luarocks
       stylua

@@ -18,6 +18,7 @@ in
       podman-desktop
       podman-tui
       prismlauncher
+      jdk25_headless # for minecraft
       protonup-qt
       rustup
       yubikey-manager

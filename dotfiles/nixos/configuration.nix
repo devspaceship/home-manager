@@ -105,6 +105,8 @@
     package = pkgs.ollama-cuda;
   };
 
+  services.tailscale.enable = true;
+
   services.gnome.gnome-keyring.enable = true;
 
   networking = {
