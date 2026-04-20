@@ -28,6 +28,7 @@ in
       neovim
       nerd-fonts.fira-code
       nmap
+      pre-commit
       ripgrep
       skim
       starship
