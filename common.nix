@@ -17,7 +17,7 @@ in
       file
       fzf
       gh
-      gimp2
+      # gimp2
       git
       hex
       just
@@ -36,11 +36,12 @@ in
       tmux
       tree
       tree-sitter
+      ueberzugpp
       unzip
       wget
       xz
       yazi
-      zathura
+      # zathura
       zellij
       zsh
       # Nushell

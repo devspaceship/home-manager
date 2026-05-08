@@ -57,5 +57,6 @@
 		}
 	},
 	"effortLevel": "high",
+	"disableAutoMode": "disable",
 	"voiceEnabled": true
 }
