@@ -21,6 +21,7 @@ in
       jdk25_headless # for minecraft
       protonup-qt
       rustup
+      signal-desktop
       yubikey-manager
     ];
 
