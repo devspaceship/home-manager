@@ -22,6 +22,7 @@ in
       protonup-qt
       rustup
       signal-desktop
+      ueberzugpp
       yubikey-manager
     ];
 

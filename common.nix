@@ -36,7 +36,6 @@ in
       tmux
       tree
       tree-sitter
-      ueberzugpp
       unzip
       wget
       xz
