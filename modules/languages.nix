@@ -30,6 +30,7 @@
       # Python
       python313
       python313Packages.pip
+      uv
       # Rust
       # rustup
     ];
