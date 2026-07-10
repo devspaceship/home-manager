@@ -10,8 +10,6 @@ if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
 fi
 # End Nix
 
-export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
-
 export LANG=en_US.UTF-8
 export EDITOR="nvim"
 export MANPATH="/usr/local/man:$MANPATH"
@@ -31,10 +29,15 @@ if [ -f "$HOME/.config/home-manager/.env" ]; then
     set +a
 fi
 
-if [ $DEVSPACE = "work" ]; then
-    export JAVA_HOME="$(/usr/libexec/java_home)"
+if [ "$(uname)" = "Darwin" ]; then
+    # The Nix profile ships GNU cc/gcc/g++, which cannot compile sources that
+    # include macOS framework headers; always prefer Apple clang.
     export CC=/usr/bin/clang
     export CXX=/usr/bin/clang++
+fi
+
+if [ "$DEVSPACE" = "work" ]; then
+    export JAVA_HOME="$(/usr/libexec/java_home)"
 fi
 
 path_prepend "$PNPM_HOME"
@@ -51,9 +54,6 @@ path_append "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 if [ -x "$(command -v brew)" ]; then
     eval "$(brew shellenv)"
     path_prepend "/opt/homebrew/opt/openjdk/bin"
-
-    # Apple Silicon Rust fix
-    export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix)/lib:$(brew --prefix)/opt/libiconv/lib
 fi
 # End Homebrew
 

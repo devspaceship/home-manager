@@ -17,6 +17,7 @@ plugins=(
     git
     gitfast
     golang
+    kubectl
     rust
     ssh
     sudo
@@ -98,3 +99,6 @@ esac
 
 # opencode
 export PATH=/Users/thomas/.opencode/bin:$PATH
+
+# opencode
+export PATH=/Users/devspaceship/.opencode/bin:$PATH

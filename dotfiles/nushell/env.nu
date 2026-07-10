@@ -73,7 +73,7 @@ def --env load-dotenv [file: string] {
 load-dotenv $"($env.HOME)/.config/home-manager/.env"
 load-dotenv $"($env.HOME)/.env"
 
-if $env.DEVSPACE? == "work" {
+if $nu.os-info.name == "macos" {
     $env.CC = "/usr/bin/clang"
     $env.CXX = "/usr/bin/clang++"
 }
