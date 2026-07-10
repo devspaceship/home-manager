@@ -24,6 +24,7 @@ in
       jq
       kubectl
       lazygit
+      libertinus # font
       lsof
       neovim
       nerd-fonts.fira-code

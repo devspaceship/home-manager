@@ -33,6 +33,8 @@
       uv
       # Rust
       # rustup
+      # Typst
+      typst
     ];
   };
 }
