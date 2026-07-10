@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Idempotent shell bootstrap, run on startup by zsh (zprofile) and nushell (env.nu).
+
+mkdir -p "$HOME/.local/bin"
+
+# opencode installs itself in ~/.opencode/bin; expose it on the standard PATH.
+if [ ! -e "$HOME/.local/bin/opencode" ] && [ -x "$HOME/.opencode/bin/opencode" ]; then
+    ln -sf "$HOME/.opencode/bin/opencode" "$HOME/.local/bin/opencode"
+fi
+
+# The Nix profile ships GNU cc, which cannot compile sources that include
+# macOS framework headers; shadow it with Apple clang via ~/.local/bin,
+# which sits earlier in PATH than ~/.nix-profile/bin.
+if [ "$(uname)" = "Darwin" ] && [ ! -e "$HOME/.local/bin/cc" ]; then
+    ln -sf /usr/bin/clang "$HOME/.local/bin/cc"
+fi

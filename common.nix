@@ -52,6 +52,7 @@ in
 
     file = {
       ".gitconfig" = configSymlink "git/conf";
+      ".env_bootstrap" = configSymlink "scripts/env_bootstrap";
       ".zsh_helpers" = configSymlink "zsh/zsh_helpers";
       ".zprofile" = configSymlink "zsh/zprofile";
       ".zshrc" = configSymlink "zsh/zshrc";

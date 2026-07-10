@@ -9,6 +9,10 @@ $env.PNPM_HOME = $"($env.HOME)/.local/share/pnpm"
 $env.OPENCODE_EXPERIMENTAL_LSP_TOOL = "true"
 $env.OPENCODE_ENABLE_EXA = "true"
 
+if ($"($env.HOME)/.env_bootstrap" | path exists) {
+    ^$"($env.HOME)/.env_bootstrap"
+}
+
 # ── PATH ─────────────────────────────────────────────────────────────────────
 $env.PATH = (
     $env.PATH

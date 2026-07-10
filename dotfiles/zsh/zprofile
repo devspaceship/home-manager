@@ -10,6 +10,8 @@ if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
 fi
 # End Nix
 
+[ -x "$HOME/.env_bootstrap" ] && "$HOME/.env_bootstrap"
+
 export LANG=en_US.UTF-8
 export EDITOR="nvim"
 export MANPATH="/usr/local/man:$MANPATH"
@@ -60,9 +62,3 @@ fi
 export PATH
 
 if_debug path_print '$PATH after zprofile'
-
-if [ -f "$HOME/.env" ]; then
-    set -a
-    source "$HOME/.env"
-    set +a
-fi
