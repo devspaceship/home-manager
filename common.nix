@@ -30,9 +30,10 @@ in
       nerd-fonts.fira-code
       nmap
       pre-commit
+      quien
       ripgrep
       skim
-      starship
+      stable.starship
       tldr
       tmux
       tree

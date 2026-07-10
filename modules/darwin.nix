@@ -5,7 +5,7 @@ in
 {
   home.packages = with pkgs; [
     jankyborders
-    sketchybar
+    stable.sketchybar
   ];
 
   home.file = {

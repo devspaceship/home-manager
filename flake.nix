@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -11,6 +12,7 @@
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    quien.url = "github:retlehs/quien";
   };
 
   outputs =
@@ -22,6 +24,18 @@
     let
       overlays = [
         inputs.neovim-nightly-overlay.overlays.default
+        # Packages broken on unstable can be pulled from the stable
+        # release instead, e.g. `pkgs.stable.sketchybar`.
+        (final: prev: {
+          stable = import inputs.nixpkgs-stable {
+            inherit (prev.stdenv.hostPlatform) system;
+          };
+          quien = inputs.quien.packages.${prev.stdenv.hostPlatform.system}.quien;
+          # The nightly test suite is broken as of 2026-07; skip it.
+          neovim = prev.neovim.overrideAttrs (_: {
+            doCheck = false;
+          });
+        })
       ];
       mkHomeConfiguration =
         {
