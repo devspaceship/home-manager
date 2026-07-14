@@ -59,6 +59,5 @@
 	"effortLevel": "high",
 	"tui": "fullscreen",
 	"disableAutoMode": "disable",
-	"voiceEnabled": true,
-	"model": "claude-fable-5[1m]"
+	"voiceEnabled": true
 }

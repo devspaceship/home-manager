@@ -32,7 +32,9 @@
       python313Packages.pip
       uv
       # Rust
-      # rustup
+      rustup
+      cargo-leptos
+      leptosfmt
       # Typst
       typst
     ];
