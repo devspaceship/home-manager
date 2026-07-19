@@ -73,6 +73,8 @@ alias tfa='terraform apply'
 alias t='tmux'
 alias ta='tmux attach'
 
+alias tenpu='just'
+
 # Starship Prompt
 eval "$(starship init zsh)"
 
