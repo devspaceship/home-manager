@@ -54,7 +54,8 @@
 			"git branch *": "allow",
 			"git config --list *": "allow",
 			"git diff *": "allow",
-			"git log *": "allow",
+			"git log*": "allow",
+			"git ls-files*": "allow",
 			"git show *": "allow",
 			"git status *": "allow",
 			"grep *": "allow",
@@ -105,6 +106,14 @@
 		},
 		// Linear MCP
 		"linear_get_issue": "allow",
-		"linear_list_comments": "allow"
+		"linear_get_project": "allow",
+		"linear_list_teams": "allow",
+		"linear_list_projects": "allow",
+		"linear_list_project_labels": "allow",
+		"linear_list_issues": "allow",
+		"linear_list_issue_statuses": "allow",
+		"linear_list_issue_labels": "allow",
+		"linear_list_comments": "allow",
+		"linear_search_documentation": "allow"
 	}
 }
