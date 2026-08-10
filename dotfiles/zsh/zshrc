@@ -26,8 +26,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-fpath+="$HOME/.zsh/completions"
-autoload -Uz compinit && compinit
 
 # Plugins Config
 TIMER_FORMAT='[%d]'
@@ -80,7 +78,6 @@ eval "$(starship init zsh)"
 
 # NVM
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 path_prepend "$HOME/.swiftly/bin"
 path_prepend "$HOME/.cargo/bin"
@@ -98,3 +95,9 @@ case ":$PATH:" in
     *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# completions
+ensure_zsh_completion ovhcloud
+
+fpath+="$HOME/.zsh/completions"
+autoload -Uz compinit && compinit

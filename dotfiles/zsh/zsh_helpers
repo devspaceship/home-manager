@@ -29,3 +29,49 @@ path_print() {
   echo "$1"
   echo "$PATH" | tr ':' '\n'
 }
+
+# Generate a zsh completion file in ~/.zsh/completions.
+#
+# Usage:
+#   ensure_zsh_completion <command>
+#   ensure_zsh_completion <command> <generator args...>
+#
+# By default this runs: <command> completion zsh
+# Pass explicit generator args for CLIs with a different interface, e.g.:
+#   ensure_zsh_completion gh completion -s zsh
+#
+# The completion file is regenerated only when it is missing or older than the
+# command binary, and it is written via a temporary file to avoid replacing a
+# working completion with a partial one.
+ensure_zsh_completion() {
+  local command_name="$1"
+  [[ -n "$command_name" ]] || return 1
+  shift || true
+
+  local -a generator_args
+  if [[ $# -eq 0 ]]; then
+    generator_args=(completion zsh)
+  else
+    generator_args=("$@")
+  fi
+
+  local generator_path
+  generator_path=$(command -v "$command_name" 2>/dev/null) || return 0
+  [[ -x "$generator_path" ]] || return 0
+
+  local completion_dir="$HOME/.zsh/completions"
+  local completion_name="_${command_name##*/}"
+  local completion_file="$completion_dir/$completion_name"
+  local completion_tmp="$completion_file.tmp"
+
+  if [[ ! -f "$completion_file" || "$generator_path" -nt "$completion_file" ]]; then
+    mkdir -p "$completion_dir"
+
+    if "$generator_path" "${generator_args[@]}" >| "$completion_tmp"; then
+      mv "$completion_tmp" "$completion_file"
+    else
+      rm -f "$completion_tmp"
+      return 1
+    fi
+  fi
+}
