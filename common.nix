@@ -64,6 +64,7 @@ in
       ".config/nvim" = configSymlink "nvim";
       ".claude/settings.json" = configSymlink "claude/settings.json";
       ".config/opencode/agents" = configSymlink "opencode/agents";
+      ".config/opencode/commands" = configSymlink "opencode/commands";
       ".config/opencode/skills" = configSymlink "opencode/skills";
       ".config/opencode/opencode.jsonc" = configSymlink "opencode/opencode.jsonc";
       ".config/opencode/tui.jsonc" = configSymlink "opencode/tui.jsonc";
