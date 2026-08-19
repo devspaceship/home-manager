@@ -30,6 +30,11 @@
 		"linear": {
 			"type": "remote",
 			"url": "https://mcp.linear.app/mcp"
+		},
+		"sentry": {
+			"type": "remote",
+			"url": "https://mcp.sentry.dev/mcp",
+			"oauth": {}
 		}
 	},
 	"permission": {
