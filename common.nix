@@ -57,6 +57,7 @@ in
       ".zsh_helpers" = configSymlink "zsh/zsh_helpers";
       ".zprofile" = configSymlink "zsh/zprofile";
       ".zshrc" = configSymlink "zsh/zshrc";
+      ".config/carapace/choices/opencode" = configSymlink "carapace/choices/opencode";
       ".config/nushell/config.nu" = configSymlink "nushell/config.nu";
       ".config/nushell/env.nu" = configSymlink "nushell/env.nu";
       ".config/btop/btop.conf" = configSymlink "btop/btop.conf";
