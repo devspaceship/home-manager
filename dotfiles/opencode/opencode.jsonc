@@ -118,8 +118,10 @@
 			"~/.local/share/nvim": "allow"
 		},
 		// Linear MCP
-		"linear_get_issue": "allow",
 		"linear_get_project": "allow",
+		"linear_get_issue": "allow",
+		"linear_get_diff": "allow",
+		"linear_get_diff_threads": "allow",
 		"linear_list_teams": "allow",
 		"linear_list_projects": "allow",
 		"linear_list_project_labels": "allow",
@@ -127,6 +129,7 @@
 		"linear_list_issue_statuses": "allow",
 		"linear_list_issue_labels": "allow",
 		"linear_list_comments": "allow",
+		"linear_list_diffs": "allow",
 		"linear_search_documentation": "allow"
 	}
 }
