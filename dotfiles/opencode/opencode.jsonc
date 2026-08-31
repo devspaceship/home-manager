@@ -72,6 +72,8 @@
 			"git status *": "allow",
 			"grep *": "allow",
 			"head *": "allow",
+			"helm lint *": "allow",
+			"helm template *": "allow",
 			"jq *": "allow",
 			"kubectl cluster-info*": "allow",
 			"kubectl describe *": "allow",
@@ -118,6 +120,7 @@
 			"~/.local/share/nvim": "allow"
 		},
 		// Linear MCP
+		"linear_get_workspace": "allow",
 		"linear_get_project": "allow",
 		"linear_get_issue": "allow",
 		"linear_get_diff": "allow",
@@ -129,6 +132,7 @@
 		"linear_list_issue_statuses": "allow",
 		"linear_list_issue_labels": "allow",
 		"linear_list_comments": "allow",
+		"linear_list_documents": "allow",
 		"linear_list_diffs": "allow",
 		"linear_search_documentation": "allow"
 	}
