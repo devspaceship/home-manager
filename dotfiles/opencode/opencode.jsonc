@@ -4,6 +4,9 @@
 	"autoupdate": true,
 	"lsp": true,
 	"formatter": true,
+	"compaction": {
+		"prune": true
+	},
 	"enabled_providers": ["github-copilot", "opencode", "ollama", "openai"],
 	"provider": {
 		"ollama": {
