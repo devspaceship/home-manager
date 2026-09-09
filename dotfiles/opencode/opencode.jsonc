@@ -2,6 +2,8 @@
 	"$schema": "https://opencode.ai/config.json",
 	"default_agent": "plan",
 	"autoupdate": true,
+	"lsp": true,
+	"formatter": true,
 	"enabled_providers": ["github-copilot", "opencode", "ollama", "openai"],
 	"provider": {
 		"ollama": {
