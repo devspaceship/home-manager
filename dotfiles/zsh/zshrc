@@ -102,3 +102,6 @@ ensure_zsh_completion ovhcloud
 
 fpath+="$HOME/.zsh/completions"
 autoload -Uz compinit && compinit
+
+# opencode
+export PATH=/Users/devspaceship/.opencode/bin:$PATH
