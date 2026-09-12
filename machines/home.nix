@@ -8,6 +8,7 @@ in
     homeDirectory = "/home/devspaceship";
 
     packages = with pkgs; [
+      awscli2
       bun
       nodejs_25
       brave
