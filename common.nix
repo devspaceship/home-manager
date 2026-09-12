@@ -29,6 +29,7 @@ in
       neovim
       nerd-fonts.fira-code
       nmap
+      opentofu
       pre-commit
       quien
       ripgrep
