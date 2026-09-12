@@ -65,10 +65,10 @@ in
       ".config/kitty" = configSymlink "kitty";
       ".config/nvim" = configSymlink "nvim";
       ".claude/settings.json" = configSymlink "claude/settings.json";
+      ".agents/skills" = configSymlink "agents/skills";
       ".config/opencode/agents" = configSymlink "opencode/agents";
       ".config/opencode/commands" = configSymlink "opencode/commands";
       ".config/opencode/plugins" = configSymlink "opencode/plugins";
-      ".config/opencode/skills" = configSymlink "opencode/skills";
       ".config/opencode/opencode.jsonc" = configSymlink "opencode/opencode.jsonc";
       ".config/opencode/tui.jsonc" = configSymlink "opencode/tui.jsonc";
       ".config/lazygit/config.yml" = configSymlink "lazygit/config.yml";
