@@ -39,6 +39,7 @@ in
       tmux
       tree
       tree-sitter
+      tuicr
       unzip
       wget
       xz
@@ -75,6 +76,7 @@ in
       ".config/starship.toml" = configSymlink "starship/starship.toml";
       ".config/tmux/tmux.conf" = configSymlink "tmux/tmux.conf";
       ".config/tmux/tmux.conf.local" = configSymlink "tmux/tmux.conf.local";
+      ".config/tuicr/config.toml" = configSymlink "tuicr/config.toml";
       ".config/zellij" = configSymlink "zellij";
     };
 
