@@ -1,7 +1,6 @@
 ---
 name: commit
 description: Create focused Git commits from the current working tree. Use when the user asks to commit, organize changes into commits, or prepare a branch for review.
-compatibility: Codex and OpenCode
 ---
 
 # Commit Changes
