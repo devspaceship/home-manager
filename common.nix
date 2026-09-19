@@ -34,7 +34,7 @@ in
       quien
       ripgrep
       skim
-      stable.starship
+      starship
       tldr
       tmux
       tree
