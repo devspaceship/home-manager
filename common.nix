@@ -77,6 +77,7 @@ in
       ".config/tmux/tmux.conf" = configSymlink "tmux/tmux.conf";
       ".config/tmux/tmux.conf.local" = configSymlink "tmux/tmux.conf.local";
       ".config/tuicr/config.toml" = configSymlink "tuicr/config.toml";
+      ".config/yazi/vfs.toml" = configSymlink "yazi/vfs.toml";
       ".config/zellij" = configSymlink "zellij";
     };
 

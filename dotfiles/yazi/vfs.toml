@@ -1,0 +1,11 @@
+[sftp.home]
+host = "home.local"
+user = "devspaceship"
+port = 22
+identity_agent = "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+
+[sftp.raspi]
+host = "raspi.local"
+user = "devspaceship"
+port = 22
+identity_agent = "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
