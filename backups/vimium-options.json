@@ -1,0 +1,55 @@
+{
+	"exclusionRules": [
+		{
+			"passKeys": "f",
+			"pattern": "https?://www.netflix.com/watch/*"
+		},
+		{
+			"passKeys": "m",
+			"pattern": "https?://calendar.google.com/*"
+		},
+		{
+			"passKeys": "f",
+			"pattern": "https?://www.masterclass.com/*"
+		},
+		{
+			"passKeys": "f",
+			"pattern": "https?://productionmusiclive.teachable.com/*"
+		},
+		{
+			"passKeys": "fitkNP<>",
+			"pattern": "https?://www.youtube.com/watch\\?v=*"
+		},
+		{
+			"passKeys": "i",
+			"pattern": "https?://www.youtube.com/*"
+		},
+		{
+			"passKeys": "",
+			"pattern": "https?://monkeytype.com/*"
+		},
+		{
+			"passKeys": "?",
+			"pattern": "https?://github.com/*"
+		},
+		{
+			"passKeys": "",
+			"pattern": "https?://192.168.0.10:8006/*"
+		},
+		{
+			"passKeys": "",
+			"pattern": "https?://10.69.42.20:8006/*"
+		},
+		{
+			"passKeys": "",
+			"pattern": "https?://thinkcentre:8006/*"
+		}
+	],
+	"grabBackFocus": true,
+	"keyMappings": "map H previousTab\nmap L nextTab\nmap J goBack\nmap K goForward\n\nunmap <a-f>",
+	"linkHintNumbers": "123456789",
+	"scrollStepSize": 64,
+	"searchEngines": "e: https://www.ecosia.org/search?method=index&q=%s Ecosia\ng: https://www.google.com/search?q=%s Google\ngh: https://github.com/search?q=%s&type=repositories GitHub\ngm: https://www.google.com/maps?q=%s Google Maps\nn: https://search.nixos.org/packages?channel=unstable&query=%s NixOS\nno: https://search.nixos.org/options?channel=unstable&query=%s NixOS Options\nnw: https://wiki.nixos.org/w/index.php?search=%s NixOS Wiki\ny: https://www.youtube.com/results?search_query=%s Youtube\nw: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia",
+	"settingsVersion": "2.4.2",
+	"userDefinedLinkHintCss": "div > .vimiumHintMarker {\n/* linkhint boxes */\nbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF785),\n  color-stop(100%,#FFC542));\nborder: 1px solid #E3BE23;\n}\n\ndiv > .vimiumHintMarker span {\n/* linkhint text */\ncolor: black;\nfont-weight: bold;\nfont-size: 18px;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n}"
+}
