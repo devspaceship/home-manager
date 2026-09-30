@@ -54,15 +54,15 @@ in
     ];
 
     file = {
-      ".gitconfig" = configSymlink "git/conf";
       ".env_bootstrap" = configSymlink "scripts/env_bootstrap";
       ".zsh_helpers" = configSymlink "zsh/zsh_helpers";
       ".zprofile" = configSymlink "zsh/zprofile";
       ".zshrc" = configSymlink "zsh/zshrc";
+      ".config/btop/btop.conf" = configSymlink "btop/btop.conf";
       ".config/carapace/choices/opencode" = configSymlink "carapace/choices/opencode";
+      ".config/git/config" = configSymlink "git/conf";
       ".config/nushell/config.nu" = configSymlink "nushell/config.nu";
       ".config/nushell/env.nu" = configSymlink "nushell/env.nu";
-      ".config/btop/btop.conf" = configSymlink "btop/btop.conf";
       ".config/kitty" = configSymlink "kitty";
       ".config/nvim" = configSymlink "nvim";
       ".claude/settings.json" = configSymlink "claude/settings.json";
