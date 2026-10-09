@@ -34,7 +34,11 @@
 	"mcp": {
 		"figma": {
 			"type": "remote",
-			"url": "https://mcp.figma.com/mcp"
+			"url": "https://mcp.figma.com/mcp",
+			"oauth": {
+				"clientId": "{file:~/.local/share/opencode/figma-oauth/client-id.txt}",
+				"clientSecret": "{file:~/.local/share/opencode/figma-oauth/client-secret.txt}"
+			}
 		},
 		"linear": {
 			"type": "remote",
