@@ -12,6 +12,7 @@ in
       bat
       btop
       cmatrix
+      eza
       fastfetch
       fd
       file
