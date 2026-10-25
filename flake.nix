@@ -30,7 +30,12 @@
           stable = import inputs.nixpkgs-stable {
             inherit (prev.stdenv.hostPlatform) system;
           };
-          quien = inputs.quien.packages.${prev.stdenv.hostPlatform.system}.quien;
+          # Upstream updated dependencies without updating vendorHash (retlehs/quien#74).
+          # This hash was reproduced independently; all 26 vendored modules match
+          # the committed go.sum and fresh sum.golang.org-verified downloads.
+          quien = inputs.quien.packages.${prev.stdenv.hostPlatform.system}.quien.overrideAttrs (_: {
+            vendorHash = "sha256-PIBHAi92+k9Cr2koPZ/Oyu6vhtgso7mfTcK1W7l9sMM=";
+          });
           # The nightly test suite is broken as of 2026-07; skip it.
           neovim = prev.neovim.overrideAttrs (_: {
             doCheck = false;
@@ -46,7 +51,7 @@
           pkgs = import nixpkgs {
             inherit system;
           };
-          platformModules = if pkgs.stdenv.isDarwin then [ ./modules/darwin.nix ] else [ ];
+          platformModules = if pkgs.stdenv.hostPlatform.isDarwin then [ ./modules/darwin.nix ] else [ ];
         in
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
