@@ -8,10 +8,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     quien.url = "github:retlehs/quien";
   };
 
@@ -23,7 +19,6 @@
     }@inputs:
     let
       overlays = [
-        inputs.neovim-nightly-overlay.overlays.default
         # Packages broken on unstable can be pulled from the stable
         # release instead, e.g. `pkgs.stable.sketchybar`.
         (final: prev: {
@@ -35,10 +30,6 @@
           # the committed go.sum and fresh sum.golang.org-verified downloads.
           quien = inputs.quien.packages.${prev.stdenv.hostPlatform.system}.quien.overrideAttrs (_: {
             vendorHash = "sha256-PIBHAi92+k9Cr2koPZ/Oyu6vhtgso7mfTcK1W7l9sMM=";
-          });
-          # The nightly test suite is broken as of 2026-07; skip it.
-          neovim = prev.neovim.overrideAttrs (_: {
-            doCheck = false;
           });
         })
       ];
