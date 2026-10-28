@@ -12,6 +12,17 @@
 		"enabled": true,
 		"indentStyle": "tab"
 	},
+	"overrides": [
+		{
+			"includes": [
+				"dotfiles/opencode/agents/*.md",
+				"dotfiles/opencode/commands/*.md"
+			],
+			"formatter": {
+				"enabled": false
+			}
+		}
+	],
 	"linter": {
 		"enabled": true,
 		"rules": {
