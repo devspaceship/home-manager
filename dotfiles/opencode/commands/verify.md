@@ -10,10 +10,21 @@ Inspect the project configuration first, then run the smallest relevant checks. 
 Respond with:
 
 ## Result
+
 <pass, fail, or insufficient evidence>
 
 ## Checks
+
 - <command>: <pass or fail>
 
+## Scope and gaps
+
+<changed behavior checked, requirements not exercised, and whether failures are pre-existing or baseline status is unknown>
+
 ## Failures
+
 <actionable output, or "None">
+
+## Working-tree effects
+
+<unexpected tracked-file changes caused by verification, or "None observed"; do not revert changes>
