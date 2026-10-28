@@ -72,7 +72,7 @@ in
       ".config/opencode/commands" = configSymlink "opencode/commands";
       ".config/opencode/plugins" = configSymlink "opencode/plugins";
       ".config/opencode/opencode.jsonc" = configSymlink "opencode/opencode.jsonc";
-      ".config/opencode/tui.jsonc" = configSymlink "opencode/tui.jsonc";
+      ".config/opencode/cli.json" = configSymlink "opencode/cli.json";
       ".config/lazygit/config.yml" = configSymlink "lazygit/config.yml";
       ".config/starship.toml" = configSymlink "starship/starship.toml";
       ".config/tmux/tmux.conf" = configSymlink "tmux/tmux.conf";

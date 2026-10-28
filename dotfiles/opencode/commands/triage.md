@@ -1,7 +1,7 @@
 ---
 description: Investigate a Linear or Sentry item and recommend a non-mutating next step
 agent: plan
-subtask: false
+subagent: false
 ---
 
 Triage this item: $ARGUMENTS

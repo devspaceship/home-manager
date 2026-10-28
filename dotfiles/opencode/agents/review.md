@@ -1,17 +1,15 @@
 ---
 description: Reviews code for quality and best practices
 mode: subagent
-temperature: 0.1
-permission:
-  edit: deny
-  bash:
-    "*": deny
-    "git diff *": allow
-    "git log*": allow
-    "git show *": allow
-    "git status *": allow
-    "rg *": allow
-  task: deny
+permissions:
+  - { action: edit, resource: "*", effect: deny }
+  - { action: shell, resource: "*", effect: deny }
+  - { action: shell, resource: "git diff *", effect: allow }
+  - { action: shell, resource: "git log*", effect: allow }
+  - { action: shell, resource: "git show *", effect: allow }
+  - { action: shell, resource: "git status *", effect: allow }
+  - { action: shell, resource: "rg *", effect: allow }
+  - { action: subagent, resource: "*", effect: deny }
 ---
 
 You are in code review mode. Focus on:
