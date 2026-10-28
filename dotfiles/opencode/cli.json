@@ -15,6 +15,9 @@
 		"blinking": true
 	},
 	"mouse": true,
+	"tabs": {
+		"mode": "off"
+	},
 	"attention": {
 		"notifications": true,
 		"sound": true,
