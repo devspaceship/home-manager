@@ -1,6 +1,6 @@
 ---
 description: Investigates Linear or Sentry items without local edits or external mutations
-mode: primary
+mode: subagent
 permissions:
   - { action: edit, resource: "*", effect: deny }
   - { action: shell, resource: "*", effect: deny }

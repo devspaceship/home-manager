@@ -1,7 +1,7 @@
 ---
 description: Investigate a Linear or Sentry item and recommend a non-mutating next step
 agent: triage
-subagent: false
+subagent: true
 ---
 
 Triage this item: $ARGUMENTS
