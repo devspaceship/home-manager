@@ -26,6 +26,7 @@ Create reviewable commits without absorbing unrelated work or publishing anythin
 2. Review each staged diff before committing. Run the most relevant available validation when the change warrants it.
 3. Write a concise, imperative title that describes the outcome and follows the selected convention. Add a body or trailers only when useful or required by the project.
 4. Create separate commits when distinct changes can be reviewed, reverted, or released independently.
+5. Run `git commit` through the shell tool with `timeout: 0` and `background: true` so long-running pre-commit hooks are not interrupted. Keep all hooks enabled and wait for the completion notification before reporting success; do not poll the background job.
 
 ## Boundaries
 
