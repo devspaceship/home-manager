@@ -72,21 +72,21 @@
 		// Broad execution, network access, and mutations retain the default ask.
 		// Shell inspection is not a sandbox and can bypass tool-level file rules.
 		{ "action": "shell", "resource": "cat *", "effect": "allow" },
-		{ "action": "shell", "resource": "docker ls*", "effect": "allow" },
-		{ "action": "shell", "resource": "docker compose ls*", "effect": "allow" },
-		{ "action": "shell", "resource": "docker ps*", "effect": "allow" },
-		{ "action": "shell", "resource": "docker compose ps*", "effect": "allow" },
+		{ "action": "shell", "resource": "docker ls *", "effect": "allow" },
+		{ "action": "shell", "resource": "docker compose ls *", "effect": "allow" },
+		{ "action": "shell", "resource": "docker ps *", "effect": "allow" },
+		{ "action": "shell", "resource": "docker compose ps *", "effect": "allow" },
 		{ "action": "shell", "resource": "echo *", "effect": "allow" },
 		{ "action": "shell", "resource": "file *", "effect": "allow" },
-		{ "action": "shell", "resource": "gh auth status*", "effect": "allow" },
+		{ "action": "shell", "resource": "gh auth status *", "effect": "allow" },
 		{ "action": "shell", "resource": "gh pr list *", "effect": "allow" },
 		{ "action": "shell", "resource": "gh pr status *", "effect": "allow" },
 		{ "action": "shell", "resource": "gh pr view *", "effect": "allow" },
 		{ "action": "shell", "resource": "git config --list *", "effect": "allow" },
 		{ "action": "shell", "resource": "git diff *", "effect": "allow" },
 		{ "action": "shell", "resource": "git grep *", "effect": "allow" },
-		{ "action": "shell", "resource": "git log*", "effect": "allow" },
-		{ "action": "shell", "resource": "git ls-files*", "effect": "allow" },
+		{ "action": "shell", "resource": "git log *", "effect": "allow" },
+		{ "action": "shell", "resource": "git ls-files *", "effect": "allow" },
 		{ "action": "shell", "resource": "git ls-tree *", "effect": "allow" },
 		{
 			"action": "shell",
@@ -104,7 +104,7 @@
 		{ "action": "shell", "resource": "jq *", "effect": "allow" },
 		{
 			"action": "shell",
-			"resource": "kubectl cluster-info*",
+			"resource": "kubectl cluster-info *",
 			"effect": "allow"
 		},
 		{ "action": "shell", "resource": "kubectl describe *", "effect": "allow" },
