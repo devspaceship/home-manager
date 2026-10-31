@@ -97,9 +97,9 @@ esac
 # pnpm end
 
 # completions
+ensure_zsh_completion just --completions zsh
 ensure_zsh_completion opencode --completions zsh
 ensure_zsh_completion ovhcloud
 
 fpath+="$HOME/.zsh/completions"
 autoload -Uz compinit && compinit
-
