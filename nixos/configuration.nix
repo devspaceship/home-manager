@@ -9,7 +9,7 @@
     ./modules/programs.nix
     ./modules/security.nix
     ./modules/users.nix
-    ./modules/virtualisation.nix
+    ./modules/virtualization.nix
   ];
 
   system.stateVersion = "25.11"; # Did you read the comment?

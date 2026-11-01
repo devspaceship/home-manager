@@ -11,7 +11,6 @@ in
   home.file = {
     ".config/aerospace/aerospace.toml" = configSymlink "aerospace/aerospace.toml";
     ".config/borders/bordersrc" = configSymlink "borders/borders.sh";
-    ".config/nix-darwin" = configSymlink "nix-darwin";
     ".config/sketchybar/plugins" = configSymlink "sketchybar/plugins";
     ".config/sketchybar/sketchybarrc" = configSymlink "sketchybar/sketchybar.sh";
   };
