@@ -5,10 +5,10 @@
     nssmdns4 = true; # enables *.local resolution over IPv4 via NSS
     nssmdns6 = true; # IPv6
     openFirewall = true; # opens UDP 5353 in the firewall
-    publish = {
-      enable = true;
-      addresses = true;
-      workstation = true;
+    settings.publish = {
+      disable-publishing = false;
+      publish-addresses = true;
+      publish-workstation = true;
     };
   };
 
