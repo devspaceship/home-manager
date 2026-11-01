@@ -11,7 +11,7 @@ update:
 
 [private]
 install-nixos:
-    sudo nixos-rebuild switch --flake {{ home_manager }}#home --impure
+    sudo nixos-rebuild switch --flake {{ home_manager }}#home
 
 [private]
 install-home-manager:

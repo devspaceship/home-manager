@@ -1,7 +1,6 @@
 { ... }:
 {
   imports = [
-    /etc/nixos/hardware-configuration.nix
     ./modules/audio.nix
     ./modules/desktop.nix
     ./modules/hardware.nix

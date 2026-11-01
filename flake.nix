@@ -61,7 +61,10 @@
       nixosConfigurations = {
         home = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [ ./dotfiles/nixos/configuration.nix ];
+          modules = [
+            ./dotfiles/nixos/configuration.nix
+            ./dotfiles/nixos/hosts/home/hardware-configuration.nix
+          ];
         };
       };
 
