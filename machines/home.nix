@@ -8,6 +8,9 @@ in
     homeDirectory = "/home/devspaceship";
 
     packages = with pkgs; [
+      (writeShellScriptBin "goodnight" ''
+        exec ${hyprshutdown}/bin/hyprshutdown --post-cmd '${systemd}/bin/systemctl poweroff'
+      '')
       awscli2
       bun
       # nodejs_25
