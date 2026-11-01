@@ -18,10 +18,10 @@
 
   services.printing.enable = true;
 
-  services.ollama = {
-    enable = true;
-    package = pkgs.ollama-cuda;
-  };
+  # services.ollama = {
+  #   enable = true;
+  #   package = pkgs.ollama-cuda;
+  # };
 
   services.gnome.gnome-keyring.enable = true;
 

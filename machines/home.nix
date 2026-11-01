@@ -10,12 +10,12 @@ in
     packages = with pkgs; [
       awscli2
       bun
-      nodejs_25
+      # nodejs_25
       brave
       google-chrome
       kitty
       lldb_22
-      minikube
+      # minikube # conflict kubectl
       podman-desktop
       podman-tui
       prismlauncher
