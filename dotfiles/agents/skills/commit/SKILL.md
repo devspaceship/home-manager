@@ -18,7 +18,8 @@ Create reviewable commits without absorbing unrelated work or publishing anythin
 1. Inspect recent non-merge commit titles, newest first. Ignore merge, revert, and other special commits when determining the convention.
 2. Treat a title with a recognized Conventional Commit type—such as `feat`, `fix`, `build`, `chore`, `ci`, `docs`, `style`, `refactor`, `perf`, or `test`—followed by an optional parenthesized scope and `: ` as Conventional Commits. Treat an otherwise scoped `scope: description` title as Scoped Commits.
 3. In a mixed history, use the first unambiguous convention found while scanning newest to oldest. If no recent title establishes either convention, use Scoped Commits.
-4. For Scoped Commits, use `scope: description`, where the scope names the affected subsystem, area, or module. For Conventional Commits, use `<type>[optional scope][!]: description`; retain the repository's established types, scopes, and casing.
+4. For Scoped Commits, use `scope: description`, where the scope names the affected subsystem, area, or module. For Conventional Commits, use `<type>[optional scope][!]: description`; retain the repository's established types and scopes.
+5. Prefer all-lowercase commit titles, including the type, scope, and description, even when recent history uses different casing. Follow an explicit project requirement if it mandates different casing.
 
 ## Stage and commit
 
