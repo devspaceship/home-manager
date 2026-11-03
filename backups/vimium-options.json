@@ -34,19 +34,11 @@
 		},
 		{
 			"passKeys": "",
-			"pattern": "https?://192.168.0.10:8006/*"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https?://10.69.42.20:8006/*"
-		},
-		{
-			"passKeys": "",
 			"pattern": "https?://thinkcentre:8006/*"
 		}
 	],
 	"grabBackFocus": true,
-	"keyMappings": "map H previousTab\nmap L nextTab\nmap J goBack\nmap K goForward\n\nunmap <a-f>",
+	"keyMappings": "map J nextTab\nmap K previousTab",
 	"linkHintNumbers": "123456789",
 	"scrollStepSize": 64,
 	"searchEngines": "e: https://www.ecosia.org/search?method=index&q=%s Ecosia\ng: https://www.google.com/search?q=%s Google\ngh: https://github.com/search?q=%s&type=repositories GitHub\ngm: https://www.google.com/maps?q=%s Google Maps\nn: https://search.nixos.org/packages?channel=unstable&query=%s NixOS\nno: https://search.nixos.org/options?channel=unstable&query=%s NixOS Options\nnw: https://wiki.nixos.org/w/index.php?search=%s NixOS Wiki\ny: https://www.youtube.com/results?search_query=%s Youtube\nw: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia",
