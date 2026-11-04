@@ -12,6 +12,7 @@ in
       bat
       btop
       cmatrix
+      curl
       eza
       fastfetch
       fd
