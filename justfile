@@ -2,7 +2,7 @@ home_manager := "~/.config/home-manager"
 
 [private]
 default:
-    @just --list
+    @just --list --unsorted
 
 [private]
 update:
@@ -34,3 +34,9 @@ upgrade-nixos: update install-nixos
 # Update flake lock and upgrade home-manager
 [linux]
 upgrade-home-manager: update install-home-manager
+
+# Keep the last three generations of each user profile and collect garbage
+gc:
+    nix-env --profile ~/.local/state/nix/profiles/home-manager --delete-generations +3
+    nix-env --profile ~/.local/state/nix/profiles/profile --delete-generations +3
+    nix store gc
