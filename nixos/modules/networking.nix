@@ -1,27 +1,28 @@
-{ ... }:
 {
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true; # enables *.local resolution over IPv4 via NSS
-    nssmdns6 = true; # IPv6
-    openFirewall = true; # opens UDP 5353 in the firewall
-    settings.publish = {
-      disable-publishing = false;
-      publish-addresses = true;
-      publish-workstation = true;
+  services = {
+    avahi = {
+      enable = true;
+      nssmdns4 = true; # enables *.local resolution over IPv4 via NSS
+      nssmdns6 = true; # IPv6
+      openFirewall = true; # opens UDP 5353 in the firewall
+      settings.publish = {
+        disable-publishing = false;
+        publish-addresses = true;
+        publish-workstation = true;
+      };
     };
-  };
 
-  services.openssh = {
-    enable = true;
-    settings = {
-      PermitRootLogin = "no";
-      PasswordAuthentication = false;
-      KbdInteractiveAuthentication = false;
+    openssh = {
+      enable = true;
+      settings = {
+        PermitRootLogin = "no";
+        PasswordAuthentication = false;
+        KbdInteractiveAuthentication = false;
+      };
     };
-  };
 
-  services.tailscale.enable = true;
+    tailscale.enable = true;
+  };
 
   networking = {
     hostName = "home";

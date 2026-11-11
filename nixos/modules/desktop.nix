@@ -13,25 +13,27 @@
     nerd-fonts.fira-code
   ];
 
-  services.hypridle.enable = true;
+  services = {
+    hypridle.enable = true;
 
-  services.xserver = {
-    videoDrivers = [ "nvidia" ];
-    enable = true;
-    xkb = {
-      layout = "us";
-      variant = "";
+    xserver = {
+      videoDrivers = [ "nvidia" ];
+      enable = true;
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
     };
-  };
 
-  services.displayManager.enable = true;
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session.command = "uwsm start hyprland-uwsm.desktop";
-      initial_session = {
-        command = "uwsm start hyprland-uwsm.desktop";
-        user = "devspaceship";
+    displayManager.enable = true;
+    greetd = {
+      enable = true;
+      settings = {
+        default_session.command = "uwsm start hyprland-uwsm.desktop";
+        initial_session = {
+          command = "uwsm start hyprland-uwsm.desktop";
+          user = "devspaceship";
+        };
       };
     };
   };

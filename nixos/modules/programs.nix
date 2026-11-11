@@ -1,19 +1,20 @@
-{ pkgs, ... }:
 {
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-  };
+  programs = {
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+    };
 
-  programs.nix-ld.enable = true;
-  programs.zsh.enable = true;
+    nix-ld.enable = true;
+    zsh.enable = true;
 
-  programs.seahorse.enable = true;
-  programs._1password.enable = true;
-  programs._1password-gui = {
-    enable = true;
-    polkitPolicyOwners = [ "devspaceship" ];
+    seahorse.enable = true;
+    _1password.enable = true;
+    _1password-gui = {
+      enable = true;
+      polkitPolicyOwners = [ "devspaceship" ];
+    };
   };
 
   services.printing.enable = true;
