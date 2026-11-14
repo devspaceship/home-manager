@@ -21,6 +21,9 @@
 	"attention": {
 		"notifications": true,
 		"sound": true,
-		"volume": 0.95
+		"volume": 1
+	},
+	"session": {
+		"thinking": "show"
 	}
 }
