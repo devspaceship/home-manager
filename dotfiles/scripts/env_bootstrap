@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Idempotent shell bootstrap, run on startup by zsh (zprofile) and nushell (env.nu).
+# Idempotent shell bootstrap, run on startup by zsh (zshrc) and nushell (env.nu).
 
 mkdir -p "$HOME/.local/bin"
 

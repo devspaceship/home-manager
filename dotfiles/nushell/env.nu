@@ -59,7 +59,7 @@ if not ($fnm_init | path exists) {
 }
 
 # ── .env loading ──────────────────────────────────────────────────────────────
-# Equivalent to zprofile's: set -a; source .env; set +a
+# Equivalent to zshrc's load_shell_env helper.
 def --env load-dotenv [file: string] {
     if ($file | path exists) {
         open --raw $file

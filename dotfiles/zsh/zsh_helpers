@@ -1,5 +1,5 @@
 # Debug
-DEBUG=0
+: ${DEBUG:=0}
 
 if_debug() {
   if [ "$DEBUG" = "1" ]; then
@@ -9,6 +9,12 @@ if_debug() {
 
 # Path
 typeset -U PATH path fpath
+
+# Keep .env exports local to the load, preserving the caller's shell options.
+load_shell_env() {
+  setopt localoptions allexport
+  source "$1"
+}
 
 path_prepend() {
   local p
