@@ -21,6 +21,7 @@
       mbake
       # Nix
       nil
+      nixd
       nixfmt
       statix
       # TypeScript

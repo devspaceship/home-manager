@@ -16,7 +16,6 @@ vim.opt.shiftround = true
 -- LSP
 vim.lsp.enable("sourcekit")
 vim.lsp.enable("racket_langserver")
-vim.lsp.enable("nil_ls")
 
 -- VimTex
 vim.g.vimtex_view_method = "zathura"
