@@ -14,7 +14,7 @@ fmt:
     set -euo pipefail
     {{ nix_files }} | xargs -0 nixfmt
 
-# Check formatting and enforce zero Statix and nil warnings without changing files.
+# Check formatting and enforce zero statix and nil warnings without changing files.
 lint:
     #!/usr/bin/env bash
     set -euo pipefail
@@ -37,10 +37,15 @@ build:
     nix build {{ nix_validation_flags }} --no-link \
         ".#homeConfigurations.\"${DEVSPACE}\".activationPackage"
 
+# Install the latest Playwright CLI and its shared skill.
+install-playwright:
+    npm install -g @playwright/cli@latest
+    playwright-cli install --skills=agents --global
+
 [private]
 update:
-    nix flake update --flake {{ home_manager }} \
-    	--extra-experimental-features 'nix-command flakes'
+	nix flake update --flake {{ home_manager }} \
+		--extra-experimental-features 'nix-command flakes'
 
 [private]
 install-nixos:
@@ -48,9 +53,9 @@ install-nixos:
 
 [private]
 install-home-manager:
-    echo "DEVSPACE = ${DEVSPACE}"
-    home-manager switch -b bak --flake {{ home_manager }}#${DEVSPACE} \
-    	--extra-experimental-features 'nix-command flakes'
+	echo "DEVSPACE = ${DEVSPACE}"
+	home-manager switch -b bak --flake {{ home_manager }}#${DEVSPACE} \
+		--extra-experimental-features 'nix-command flakes'
 
 # Update flake lock and upgrade home-manager
 [macos]

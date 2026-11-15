@@ -1,6 +1,18 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   inherit (import ./lib.nix { inherit config; }) configSymlink;
+  personalSkills = lib.filterAttrs (
+    name: type:
+    type == "directory" && builtins.pathExists (./dotfiles/agents/skills + "/${name}/SKILL.md")
+  ) (builtins.readDir ./dotfiles/agents/skills);
+  skillLinks = lib.mapAttrs' (
+    name: _: lib.nameValuePair ".agents/skills/${name}" (configSymlink "agents/skills/${name}")
+  ) personalSkills;
 in
 {
   nixpkgs.config.allowUnfree = true;
@@ -67,7 +79,6 @@ in
       ".config/kitty" = configSymlink "kitty";
       ".config/nvim" = configSymlink "nvim";
       ".claude/settings.json" = configSymlink "claude/settings.json";
-      ".agents/skills" = configSymlink "agents/skills";
       ".config/opencode/AGENTS.md" = configSymlink "opencode/AGENTS.md";
       ".config/opencode/agents" = configSymlink "opencode/agents";
       ".config/opencode/commands" = configSymlink "opencode/commands";
@@ -81,7 +92,8 @@ in
       ".config/tuicr/config.toml" = configSymlink "tuicr/config.toml";
       ".config/yazi/vfs.toml" = configSymlink "yazi/vfs.toml";
       ".config/zellij" = configSymlink "zellij";
-    };
+    }
+    // skillLinks;
 
     sessionVariables = {
       EDITOR = "nvim";
