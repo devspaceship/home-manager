@@ -14,7 +14,7 @@ in
       awscli2
       bun
       # nodejs_25
-      brave
+      firefox
       google-chrome
       kitty
       lldb_22
