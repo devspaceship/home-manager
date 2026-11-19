@@ -15,12 +15,4 @@
     polkit.enable = true;
     rtkit.enable = true;
   };
-
-  # YubiKey access by polkit
-  systemd.services."polkit-agent-helper@".serviceConfig = {
-    PrivateDevices = false;
-    DevicePolicy = "closed";
-    DeviceAllow = [ "char-hidraw rw" ];
-    ProtectHome = false;
-  };
 }
