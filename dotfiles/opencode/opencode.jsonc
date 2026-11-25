@@ -59,6 +59,10 @@
 				"type": "remote",
 				"url": "https://mcp.notion.com/mcp"
 			},
+			"posthog": {
+				"type": "remote",
+				"url": "https://mcp.posthog.com/mcp"
+			},
 			"sentry": {
 				"type": "remote",
 				"url": "https://mcp.sentry.dev/mcp",
